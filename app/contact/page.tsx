@@ -13,9 +13,11 @@ export default function ContactPage() {
     <>
       <Header />
       <div className="full-width-content">
-        <main id="main-content" className="site-container">
-          <article>
-            {/* Head Office */}
+        <main id="main-content" className="Main_main__ZcYG1 site-container">
+          <div className="container entry-content">
+            <article className="ContentWrapper_content__16TR9">
+              <div>
+                {/* Head Office */}
             <section className="gb-block-container alignfull contact_intro" style={{ padding: "20% 5% 5%" }}>
               <div className="gb-container-content" style={{ maxWidth: "1200px" }}>
                 <p className="tag" style={{ color: "#ef4136", fontSize: "18px" }}>
@@ -113,7 +115,9 @@ export default function ContactPage() {
             </section>
 
             <section className="gb-block-container alignfull" style={{ padding: "12% 5%" }} />
-          </article>
+              </div>
+            </article>
+          </div>
         </main>
       </div>
       <Footer />

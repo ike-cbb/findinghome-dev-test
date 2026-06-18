@@ -15,7 +15,7 @@ export default function HomePage() {
     <>
       <Header />
       <div className="full-width-content">
-        <main id="main-content" className="site-container">
+        <main id="main-content" className="Main_main__ZcYG1 site-container">
           <div className="container entry-content">
             <article className="ContentWrapper_content__16TR9">
               <div>
