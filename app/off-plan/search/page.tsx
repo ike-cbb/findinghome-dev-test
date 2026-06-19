@@ -8,9 +8,8 @@ export const metadata = {
 
 export default function OffPlanSearchPage() {
   return (
-    <div className="full-width-content">
-      <article>
-        <section className="py-12 lg:py-16 px-5">
+    <article>
+      <section className="py-12 lg:py-16 px-5">
           <div className="container">
             <div className="max-w-[1200px] mx-auto">
               <p className="text-[#ef4136] text-lg font-medium uppercase tracking-wide mb-4">
@@ -34,6 +33,5 @@ export default function OffPlanSearchPage() {
           </div>
         </section>
       </article>
-    </div>
   );
 }

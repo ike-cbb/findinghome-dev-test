@@ -9,8 +9,7 @@ export const metadata = {
 export default function AboutUsPage() {
   return (
     <article>
-      <div>
-          {/* Hero */}
+      {/* Hero */}
           <section className="relative min-h-[60vh] lg:min-h-[70vh]">
             <div className="absolute inset-0">
               <Image
@@ -238,7 +237,6 @@ export default function AboutUsPage() {
               </div>
             </div>
           </section>
-        </div>
-      </article>
+    </article>
   );
 }

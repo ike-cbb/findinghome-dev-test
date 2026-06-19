@@ -110,9 +110,8 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="full-width-content">
-      <article>
-        <section className="py-20 lg:py-32 px-5">
+    <article>
+      <section className="py-20 lg:py-32 px-5">
           <div className="container">
             <div className="max-w-[1200px] mx-auto">
               <h1 className="text-4xl lg:text-5xl font-normal text-[#010101] mb-8">
@@ -167,6 +166,5 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
       </article>
-    </div>
   );
 }
