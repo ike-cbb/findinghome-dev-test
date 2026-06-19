@@ -1,6 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
 export const metadata = {
   title: "Terms and Condition - Finding Home",
   description: "Others find properties. We find homes.",
@@ -47,46 +44,32 @@ const termsContent = [
 
 export default function TermsAndConditionPage() {
   return (
-    <>
-      <Header />
-      <div className="full-width-content">
-        <main id="main-content" className="Main_main__ZcYG1 site-container">
-          <div className="container entry-content">
-            <article className="ContentWrapper_content__16TR9">
-              <div>
-                <div
-                  style={{
-                    paddingLeft: "5%",
-                    paddingRight: "5%",
-                    paddingBottom: "10%",
-                    paddingTop: "20%",
-                  }}
-                  className="wp-block-genesis-blocks-gb-container alignfull contact_intro legal_page gb-block-container"
-                >
-                  <div className="gb-container-inside">
-                    <div className="gb-container-content" style={{ maxWidth: "1200px" }}>
-                      <h1 className="has-large-font-size wp-block-heading">Terms of Use</h1>
-                      <p>
-                        Welcome to Finding Home Real Estate LLC&apos;s website (&quot;Website&quot;). If you continue to
-                        browse and use this Website, you agree to comply with and be bound by the following
-                        terms and conditions of use. These terms, together with our Privacy Policy, govern
-                        Finding Home Real Estate LLC&apos;s relationship with you in relation to this Website.
-                      </p>
-                      {termsContent.map((section, index) => (
-                        <div key={index}>
-                          <h4 className="wp-block-heading">{section.title}</h4>
-                          <p>{section.text}</p>
-                        </div>
-                      ))}
-                    </div>
+    <div className="full-width-content">
+      <article>
+        <section className="py-20 lg:py-32 px-5">
+          <div className="container">
+            <div className="max-w-[1200px] mx-auto">
+              <h1 className="text-4xl lg:text-5xl font-normal text-[#010101] mb-8">
+                Terms of Use
+              </h1>
+              <p className="text-[#010101] text-lg mb-10 leading-relaxed">
+                Welcome to Finding Home Real Estate LLC&apos;s website (&quot;Website&quot;). If you continue to
+                browse and use this Website, you agree to comply with and be bound by the following
+                terms and conditions of use. These terms, together with our Privacy Policy, govern
+                Finding Home Real Estate LLC&apos;s relationship with you in relation to this Website.
+              </p>
+              <div className="space-y-8">
+                {termsContent.map((section, index) => (
+                  <div key={index}>
+                    <h2 className="text-xl font-medium text-[#010101] mb-3">{section.title}</h2>
+                    <p className="text-[#010101] text-base leading-relaxed">{section.text}</p>
                   </div>
-                </div>
+                ))}
               </div>
-            </article>
+            </div>
           </div>
-        </main>
-      </div>
-      <Footer />
-    </>
+        </section>
+      </article>
+    </div>
   );
 }

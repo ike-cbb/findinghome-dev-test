@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -14,19 +14,12 @@ const navLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
-
   const isHome = pathname === "/";
 
-  useEffect(() => {
-    function check() {
-      setIsMobile(window.innerWidth < 991);
-    }
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
+  const getMenuClassName = (href: string) => {
+    return `menu-${Buffer.from(href).toString("base64")}`;
+  };
 
   return (
     <header className={`Header_header__Z8PUO ${isHome ? "home" : "sub-page"}`}>
@@ -64,7 +57,7 @@ export default function Header() {
           <nav className="Header_primary-navigation__XhPd1" role="navigation" aria-label="Header Menu menu">
             <ul className="menu">
               {navLinks.map((link) => (
-                <li key={link.href} className={`menu-${Buffer.from(link.href).toString("base64")}`}>
+                <li key={link.href} className={getMenuClassName(link.href)}>
                   <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
@@ -87,6 +80,22 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {mobileOpen && (
+        <div className="mobile-menu">
+          <nav role="navigation" aria-label="Mobile navigation">
+            <ul className="menu">
+              {navLinks.map((link) => (
+                <li key={link.href} className={getMenuClassName(link.href)}>
+                  <Link href={link.href} onClick={() => setMobileOpen(false)}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

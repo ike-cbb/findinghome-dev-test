@@ -143,7 +143,6 @@ export default function Footer() {
             alt="Whatsapp logo"
             width={50}
             height={50}
-            style={{ width: "auto", height: "auto" }}
           />
         </a>
       </div>

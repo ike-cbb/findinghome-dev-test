@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata = {
@@ -9,78 +7,71 @@ export const metadata = {
 
 export default function GuidePage() {
   return (
-    <>
-      <Header />
-      <div className="full-width-content">
-        <main id="main-content" className="Main_main__ZcYG1 site-container">
-          <div className="container entry-content">
-            <article className="ContentWrapper_content__16TR9">
-              <div>
-                <section style={{ padding: "15% 5%" }}>
-                  <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-                    <h1 style={{ color: "#010101", fontSize: "4rem", fontWeight: 400, fontFamily: '"Poppins", sans-serif', lineHeight: 1.2 }}>
-                      What is Off-Plan and Why You Need to Invest in Dubai
-                    </h1>
-                    <div style={{ marginTop: "2rem", fontSize: "18px", lineHeight: 1.8 }}>
-                      <p>
-                        Off-plan property refers to property that is purchased before
-                        it has been built. Buyers usually buy directly from the
-                        developer and typically pay a down payment followed by
-                        scheduled payments linked to the construction progress.
-                      </p>
+    <article>
+        <section className="pt-20 lg:pt-32 pb-16 lg:pb-24 px-5">
+          <div className="container">
+            <div className="max-w-[800px] mx-auto">
+              <h1 className="text-[4rem] font-normal text-[#010101] mb-10 leading-tight">
+                What is Off-Plan and Why You Need to Invest in Dubai
+              </h1>
+              <div className="space-y-6 text-lg leading-[1.8] text-[#010101]">
+                <p>
+                  Off-plan property refers to property that is purchased before
+                  it has been built. Buyers usually buy directly from the
+                  developer and typically pay a down payment followed by
+                  scheduled payments linked to the construction progress.
+                </p>
 
-                      <h2 style={{ color: "#ef4136", fontSize: "2rem", fontWeight: 400, fontFamily: '"Poppins", sans-serif', marginTop: "2.5rem" }}>
-                        Why Invest in Dubai?
-                      </h2>
-                      <p style={{ marginTop: "1rem" }}>
-                        Dubai continues to be one of the most exciting real estate
-                        markets in the world. The emirate offers investors a unique
-                        combination of benefits including:
-                      </p>
-                      <ul style={{ paddingLeft: "1.5rem", marginTop: "1rem" }}>
-                        <li>Zero income tax and low VAT at just 5%</li>
-                        <li>A safe and stable environment - consistently ranked among the world&rsquo;s safest cities</li>
-                        <li>World-class infrastructure and connectivity, home to the world&rsquo;s busiest international airport</li>
-                        <li>Strong regulatory framework with RERA protecting investor interests</li>
-                        <li>Attractive payment plans with developers offering post-completion payment schedules</li>
-                        <li>Golden Visa opportunities for qualifying property investors</li>
-                      </ul>
+                <h2 className="text-xl lg:text-2xl font-medium text-[#ef4136] pt-4">
+                  Why Invest in Dubai?
+                </h2>
+                <p>
+                  Dubai continues to be one of the most exciting real estate
+                  markets in the world. The emirate offers investors a unique
+                  combination of benefits including:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Zero income tax and low VAT at just 5%</li>
+                  <li>A safe and stable environment - consistently ranked among the world&rsquo;s safest cities</li>
+                  <li>World-class infrastructure and connectivity, home to the world&rsquo;s busiest international airport</li>
+                  <li>Strong regulatory framework with RERA protecting investor interests</li>
+                  <li>Attractive payment plans with developers offering post-completion payment schedules</li>
+                  <li>Golden Visa opportunities for qualifying property investors</li>
+                </ul>
 
-                      <h2 style={{ color: "#ef4136", fontSize: "2rem", fontWeight: 400, fontFamily: '"Poppins", sans-serif', marginTop: "2.5rem" }}>
-                        Benefits of Off-Plan Investment
-                      </h2>
-                      <ul style={{ paddingLeft: "1.5rem", marginTop: "1rem" }}>
-                        <li>Lower entry price point compared to ready properties</li>
-                        <li>Potential for significant capital appreciation</li>
-                        <li>Flexible payment plans spread over construction period</li>
-                        <li>Brand-new property with modern specifications</li>
-                        <li>Choice of premium units and locations in new developments</li>
-                      </ul>
+                <h2 className="text-xl lg:text-2xl font-medium text-[#ef4136] pt-4">
+                  Benefits of Off-Plan Investment
+                </h2>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Lower entry price point compared to ready properties</li>
+                  <li>Potential for significant capital appreciation</li>
+                  <li>Flexible payment plans spread over construction period</li>
+                  <li>Brand-new property with modern specifications</li>
+                  <li>Choice of premium units and locations in new developments</li>
+                </ul>
 
-                      <h2 style={{ color: "#ef4136", fontSize: "2rem", fontWeight: 400, fontFamily: '"Poppins", sans-serif', marginTop: "2.5rem" }}>
-                        How Finding Home Can Help
-                      </h2>
-                      <p style={{ marginTop: "1rem" }}>
-                        Our experienced team of real estate professionals are experts
-                        in the Dubai off-plan market. We provide personalized guidance
-                        throughout your investment journey, from selecting the right
-                        property to managing the purchase process and beyond.
-                      </p>
-                    </div>
-
-                    <div style={{ marginTop: "2.5rem" }}>
-                      <Link href="/off-plan" className="wp-block-button__link" style={{ fontSize: "18px" }}>
-                        Explore Off-Plan Properties
-                      </Link>
-                    </div>
-                  </div>
-                </section>
+                <h2 className="text-xl lg:text-2xl font-medium text-[#ef4136] pt-4">
+                  How Finding Home Can Help
+                </h2>
+                <p>
+                  Our experienced team of real estate professionals are experts
+                  in the Dubai off-plan market. We provide personalized guidance
+                  throughout your investment journey, from selecting the right
+                  property to managing the purchase process and beyond.
+                </p>
               </div>
-            </article>
-          </div>
-        </main>
-      </div>
-      <Footer />
-    </>
+
+                <div className="mt-12">
+                  <Link
+                    href="/off-plan"
+                    className="inline-block px-10 py-4 bg-[#ef4136] text-white text-lg font-medium rounded-[3px] hover:bg-[#d63629] transition-colors"
+                  >
+                    Explore Off-Plan Properties
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
   );
 }

@@ -1,6 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
 export const metadata = {
   title: "Privacy Policy - Finding Home",
   description: "Others find properties. We find homes.",
@@ -17,7 +14,7 @@ const sections = [
     id: "collection-of-personal-information",
     title: "Collection of personal information",
     content:
-      "You can access and use the Website and Services without telling us who you are or revealing any information by which someone could identify you as a specific, identifiable individual. If, however, you wish to use some of the features offered on the Website, you may be asked to provide certain Personal Information (for example, your name and e-mail address). We receive and store any information you knowingly provide to us when you create an account, or fill any forms on the Website. When required, this information may include the following: Account details (such as user name, unique user ID, password, etc), Contact information (such as email address, phone number, etc), Basic personal information (such as name, country of residence, etc), Geolocation data of your device (such as latitude and longitude). You can choose not to provide us with your Personal Information, but then you may not be able to take advantage of some of the features on the Website. Users who are uncertain about what information is mandatory are welcome to contact us.",
+      "You can access and use the Website and Services without telling us who you are or revealing any information by which someone could identify you as a specific, identifiable individual. If, however, you wish to use some of the features offered on the Website, you may be asked to provide certain Personal Information (for example, your name or e-mail address). We receive and store any information you knowingly provide to us when you create an account, or fill any forms on the Website. When required, this information may include the following: Account details (such as user name, unique user ID, password, etc), Contact information (such as email address, phone number, etc), Basic personal information (such as name, country of residence, etc), Geolocation data of your device (such as latitude and longitude). You can choose not to provide us with your Personal Information, but then you may not be able to take advantage of some of the features on the Website. Users who are uncertain about what information is mandatory are welcome to contact us.",
   },
   {
     id: "privacy-of-children",
@@ -111,81 +108,65 @@ const sections = [
   },
 ];
 
-const tocItems = sections.map((s) => (
-  <li key={s.id}>
-    <a href={`#${s.id}`}>{s.title}</a>
-  </li>
-));
-
 export default function PrivacyPolicyPage() {
   return (
-    <>
-      <Header />
-      <div className="full-width-content">
-        <main id="main-content" className="Main_main__ZcYG1 site-container">
-          <div className="container entry-content">
-            <article className="ContentWrapper_content__16TR9">
-              <div>
-                <div
-                  style={{
-                    paddingLeft: "5%",
-                    paddingRight: "5%",
-                    paddingBottom: "10%",
-                    paddingTop: "20%",
-                  }}
-                  className="wp-block-genesis-blocks-gb-container alignfull contact_intro legal_page gb-block-container"
-                >
-                  <div className="gb-container-inside">
-                    <div className="gb-container-content" style={{ maxWidth: "1200px" }}>
-                      <div className="wp-block-group contact_details">
-                        <div className="wp-block-group__inner-container is-layout-constrained wp-block-group-is-layout-constrained">
-                          <h1>Privacy policy</h1>
-                          <p>
-                            We respect your privacy and are committed to protecting it through our
-                            compliance with this privacy policy (&quot;Policy&quot;). This Policy describes the types
-                            of information we may collect from you or that you may provide
-                            (&quot;Personal Information&quot;) on the <a href="https://findinghome.ae">findinghome.ae</a>{" "}
-                            website (&quot;Website&quot; or &quot;Service&quot;) and any of its related products and services
-                            (collectively, &quot;Services&quot;), and our practices for collecting, using, maintaining,
-                            protecting, and disclosing that Personal Information. It also describes the choices
-                            available to you regarding our use of your Personal Information and how you can
-                            access and update it.
-                          </p>
-                          <p>
-                            This Policy is a legally binding agreement between you (&quot;User&quot;, &quot;you&quot; or
-                            &quot;your&quot;) and Finding Home Real Estate LLC (doing business as &quot;Finding Home&quot;, &quot;we&quot;,
-                            &quot;us&quot; or &quot;our&quot;). If you are entering into this agreement on behalf of a business or
-                            other legal entity, you represent that you have the authority to bind such entity
-                            to this agreement, in which case the terms &quot;User&quot;, &quot;you&quot; or &quot;your&quot; shall refer
-                            to such entity. If you do not have such authority, or if you do not agree with
-                            the terms of this agreement, you must not accept this agreement and may not
-                            access and use the Website and Services. By accessing and using the Website and
-                            Services, you acknowledge that you have read, understood, and agree to be bound
-                            by the terms of this Policy. This Policy does not apply to the practices of
-                            companies that we do not own or control, or to individuals that we do not employ
-                            or manage.
-                          </p>
-                          <div className="wpembed-toc">
-                            <h3>Table of contents</h3>
-                            <ol className="wpembed-toc">{tocItems}</ol>
-                          </div>
-                          {sections.map((section) => (
-                            <div key={section.id}>
-                              <h2 id={section.id}>{section.title}</h2>
-                              <p>{section.content}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    <div className="full-width-content">
+      <article>
+        <section className="py-20 lg:py-32 px-5">
+          <div className="container">
+            <div className="max-w-[1200px] mx-auto">
+              <h1 className="text-4xl lg:text-5xl font-normal text-[#010101] mb-8">
+                Privacy policy
+              </h1>
+              <p className="text-[#010101] text-lg mb-6 leading-relaxed">
+                We respect your privacy and are committed to protecting it through our
+                compliance with this privacy policy (&quot;Policy&quot;). This Policy describes the types
+                of information we may collect from you or that you may provide
+                (&quot;Personal Information&quot;) on the <a href="https://findinghome.ae" className="text-[#ef4136] hover:underline">findinghome.ae</a>{" "}
+                website (&quot;Website&quot; or &quot;Service&quot;) and any of its related products and services
+                (collectively, &quot;Services&quot;), and our practices for collecting, using, maintaining,
+                protecting, and disclosing that Personal Information. It also describes the choices
+                available to you regarding our use of your Personal Information and how you can
+                access and update it.
+              </p>
+              <p className="text-[#010101] text-lg mb-10 leading-relaxed">
+                This Policy is a legally binding agreement between you (&quot;User&quot;, &quot;you&quot; or
+                &quot;your&quot;) and Finding Home Real Estate LLC (doing business as &quot;Finding Home&quot;, &quot;we&quot;,
+                &quot;us&quot; or &quot;our&quot;). If you are entering into this agreement on behalf of a business or
+                other legal entity, you represent that you have the authority to bind such entity
+                to this agreement, in which case the terms &quot;User&quot;, &quot;you&quot; or &quot;your&quot; shall refer
+                to such entity. If you do not have such authority, or if you do not agree with
+                the terms of this agreement, you must not accept this agreement and may not
+                access and use the Website and Services. By accessing and using the Website and
+                Services, you acknowledge that you have read, understood, and agree to be bound
+                by the terms of this Policy. This Policy does not apply to the practices of
+                companies that we do not own or control, or to individuals that we do not employ
+                or manage.
+              </p>
+
+              <div className="bg-[#f9f9f9] p-6 mb-10 border-l-4 border-[#ef4136]">
+                <h3 className="text-xl font-medium text-[#010101] mb-4">Table of contents</h3>
+                <ol className="list-decimal pl-6 space-y-2">
+                  {sections.map((s) => (
+                    <li key={s.id}>
+                      <a href={`#${s.id}`} className="text-[#ef4136] hover:underline">{s.title}</a>
+                    </li>
+                  ))}
+                </ol>
               </div>
-            </article>
+
+              <div className="space-y-10">
+                {sections.map((section) => (
+                  <div key={section.id} id={section.id}>
+                    <h2 className="text-xl font-medium text-[#010101] mb-3">{section.title}</h2>
+                    <p className="text-[#010101] text-base leading-relaxed">{section.content}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </main>
-      </div>
-      <Footer />
-    </>
+        </section>
+      </article>
+    </div>
   );
 }
