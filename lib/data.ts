@@ -85,7 +85,7 @@ export const listings: ListingProperty[] = [
       "<p>The villa sits within the exclusive Trump Estates enclave, inside the prestigious Trump International Golf Club, Dubai.</p>",
     developerSummary:
       "<p>DAMAC Properties has been at the forefront of the Middle East's luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region.</p>",
-    heroImage: "V51-Rear-min-scaled.jpg",
+    heroImage: "V51-Front-scaled.jpg",
     galleryImages: [
       "V51-Front-1-scaled.jpg",
       "V50-jacuzzi_20220719-Edited-min-scaled.jpg",
