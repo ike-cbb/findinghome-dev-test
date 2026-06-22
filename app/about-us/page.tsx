@@ -126,7 +126,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* About Content */}
-      <section className="px-[5%]" style={{ paddingBottom: "5%" }}>
+      <section className="px-[5%]">
         <div style={{ maxWidth: "1200px", margin: "0 auto", paddingLeft: 0, paddingRight: 0 }}>
           <figure className="m-0">
             <Image
