@@ -65,7 +65,7 @@ export default function OffPlanPage() {
       {/* Featured Off-Plan & Investments */}
       <section className="px-[5%]" style={{ paddingTop: "60px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", paddingLeft: 0, paddingRight: 0 }}>
-          <h3 className="text-[#010101] font-medium" style={{ fontSize: "4rem" }}>
+          <h3 className="text-[#010101] font-medium" style={{ fontSize: "4rem", marginBottom: "40px" }}>
             Featured Off-Plan &amp; Investments
           </h3>
 
