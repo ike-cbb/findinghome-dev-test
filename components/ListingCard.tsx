@@ -3,83 +3,167 @@ import Image from "next/image";
 import type { ListingProperty } from "@/lib/data";
 import { formatPrice } from "@/lib/data";
 
+function BedIcon() {
+  return (
+    <svg width="21" height="14" viewBox="0 0 21 14" fill="none">
+      <path
+        d="M1 7v6m0-6V1h19v6m-19 0h19m0 0v6M3 10v3m4.5-3v3m6-3v3m4.5-3v3"
+        stroke="#010101"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function BathIcon() {
+  return (
+    <svg width="18" height="16" viewBox="0 0 18 16" fill="none">
+      <path
+        d="M1 7h16M3 7V3a2 2 0 012-2h2a2 2 0 012 2v4M1 7v6a2 2 0 002 2h12a2 2 0 002-2V7"
+        stroke="#010101"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M5 1h3" stroke="#010101" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function AreaIcon() {
+  return (
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+      <rect
+        x="1"
+        y="1"
+        width="15"
+        height="15"
+        rx="2"
+        stroke="#010101"
+        strokeWidth="1.5"
+      />
+      <path d="M1 5h15M5 1v15" stroke="#010101" strokeWidth="1.5" />
+    </svg>
+  );
+}
+
 interface ListingCardProps {
   property: ListingProperty;
 }
 
 export default function ListingCard({ property }: ListingCardProps) {
   return (
-    <div
-      style={{
-        borderRadius: "8px",
-        overflow: "hidden",
-        boxShadow: "0 2px 20px rgba(0,0,0,.08)",
-        background: "#fff",
-        transition: "transform 0.3s",
-      }}
-    >
+    <div className="group cursor-pointer" style={{ transition: "all .3s" }}>
       <Link
         href={`/off-plan/${property.slug}/`}
-        style={{ textDecoration: "none", color: "inherit", display: "block" }}
+        className="no-underline text-inherit block"
       >
-        <div style={{ position: "relative", height: "240px", overflow: "hidden" }}>
+        {/* Image */}
+        <figure
+          className="m-0 overflow-hidden relative"
+          style={{ height: "220px" }}
+        >
           <Image
             src={`/assets/listings/${property.heroImage}`}
             alt={property.title}
             fill
-            style={{ objectFit: "cover" }}
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.2]"
+            style={{ transform: "scale(1.1)" }}
             sizes="(max-width: 768px) 100vw, 350px"
           />
-          <div
+        </figure>
+
+        {/* Description */}
+        <div
+          className="flex flex-col justify-center"
+          style={{ background: "#fef0f0", padding: "5%" }}
+        >
+          {/* Price */}
+          <h5
+            className="m-0 mb-[5px]"
             style={{
-              position: "absolute",
-              top: "15px",
-              right: "15px",
-              background: "#ef4136",
-              color: "#fff",
-              padding: "8px 16px",
-              borderRadius: "20px",
-              fontWeight: 600,
-              fontSize: "16px",
+              color: "#010101",
+              fontSize: "26px",
+              fontWeight: 500,
             }}
           >
             AED {formatPrice(property.priceMin)}
-            {property.priceMax > property.priceMin
-              ? ` - AED ${formatPrice(property.priceMax)}`
-              : ""}
-          </div>
-        </div>
-        <div style={{ padding: "20px" }}>
-          <Image
-            src={`/assets/listings/${property.logoImage}`}
-            alt=""
-            width={100}
-            height={25}
-            style={{ maxHeight: "25px", width: "auto", marginBottom: "10px" }}
-          />
-          <h3
-            style={{
-              fontSize: "1.3rem",
-              fontWeight: 500,
-              margin: "0 0 10px",
-              color: "#010101",
-              fontFamily: '"Poppins", sans-serif',
-            }}
-          >
-            {property.title}
-          </h3>
+          </h5>
+
+          {/* Title + Community */}
           <p
-            style={{
-              color: "#898880",
-              margin: "0 0 12px",
-              fontSize: "14px",
-            }}
+            className="m-0 mb-[10px] text-sm"
+            style={{ color: "#898880" }}
           >
-            {property.city} | {property.community}
+            {property.title}, {property.community}
           </p>
-          <div style={{ display: "flex", gap: "15px", fontSize: "14px", color: "#898880" }}>
-            <span>{property.bedrooms} Bed</span>
-            <span>{property.area}</span>
+
+          {/* Meta row */}
+          <div
+            className="flex flex-nowrap m-0 w-full"
+            style={{ gap: "5px" }}
+          >
+            {/* Bedrooms */}
+            <div
+              className="flex items-center flex-initial"
+              style={{ gap: "8px", lineHeight: 1 }}
+            >
+              <figure className="m-0 flex items-center">
+                <BedIcon />
+              </figure>
+              <p
+                className="m-0"
+                style={{
+                  color: "#010101",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                }}
+              >
+                {property.bedrooms}
+              </p>
+            </div>
+
+            {/* Bathrooms */}
+            <div
+              className="flex items-center flex-initial"
+              style={{ gap: "8px", lineHeight: 1 }}
+            >
+              <figure className="m-0 flex items-center">
+                <BathIcon />
+              </figure>
+              <p
+                className="m-0"
+                style={{
+                  color: "#010101",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                }}
+              >
+                {property.bathrooms}
+              </p>
+            </div>
+
+            {/* Area */}
+            <div
+              className="flex items-center flex-initial"
+              style={{ gap: "8px", lineHeight: 1 }}
+            >
+              <figure className="m-0 flex items-center">
+                <AreaIcon />
+              </figure>
+              <p
+                className="m-0"
+                style={{
+                  color: "#010101",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                }}
+              >
+                {property.area}
+              </p>
+            </div>
           </div>
         </div>
       </Link>

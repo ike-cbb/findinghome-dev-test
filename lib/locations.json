@@ -1,0 +1,41 @@
+{
+  "communities": [
+    { "value": "all", "label": "All Communities" },
+    { "value": "DAMAC Lagoons", "label": "DAMAC Lagoons" },
+    { "value": "DAMAC - Hills", "label": "DAMAC Hills" },
+    { "value": "Jumeirah Lake Towers", "label": "Jumeirah Lake Towers (JLT)" },
+    { "value": "Business Bay", "label": "Business Bay" }
+  ],
+  "bedrooms": [
+    { "value": "all", "label": "All Bedrooms" },
+    { "value": "studio", "label": "Studio" },
+    { "value": "1", "label": "1 Bedroom" },
+    { "value": "2", "label": "2 Bedrooms" },
+    { "value": "3", "label": "3 Bedrooms" },
+    { "value": "4", "label": "4 Bedrooms" },
+    { "value": "5", "label": "5 Bedrooms" },
+    { "value": "6", "label": "6 Bedrooms" },
+    { "value": "7", "label": "7 Bedrooms" }
+  ],
+  "developers": [
+    { "value": "all", "label": "All Developers" },
+    { "value": "DAMAC properties", "label": "DAMAC Properties" },
+    { "value": "DAMAC PROPERTIES", "label": "DAMAC PROPERTIES" },
+    { "value": "Sobha Realty", "label": "Sobha Realty" }
+  ],
+  "completionYears": [
+    { "value": "all", "label": "All Completion Years" },
+    { "value": "2024", "label": "2024" },
+    { "value": "2025", "label": "2025" },
+    { "value": "2026", "label": "2026" },
+    { "value": "2027", "label": "2027" }
+  ],
+  "priceRanges": [
+    { "value": "all", "label": "Any Price" },
+    { "value": "0-1000000", "label": "Under AED 1M" },
+    { "value": "1000000-2000000", "label": "AED 1M - 2M" },
+    { "value": "2000000-5000000", "label": "AED 2M - 5M" },
+    { "value": "5000000-10000000", "label": "AED 5M - 10M" },
+    { "value": "10000000-99999999", "label": "AED 10M+" }
+  ]
+}

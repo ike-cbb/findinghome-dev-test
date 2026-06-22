@@ -43,7 +43,7 @@ export default function RootLayout({
           defer
         />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col font-sans">
         <Header />
         <main id="main-content" className="Main_main__ZcYG1 site-container flex-1">
           {children}
