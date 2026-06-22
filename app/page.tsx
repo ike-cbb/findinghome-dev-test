@@ -20,19 +20,19 @@ export default function HomePage() {
             alt=""
             fill
             className="object-cover"
+            style={{ opacity: 1 }}
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1090px] text-center">
-          <h1 className="text-[#fefefe] text-[3rem] sm:text-[4.5rem] font-medium leading-[1.5] sm:leading-[1.5]">
+          <h1 className="text-[#fefefe] text-[3rem] sm:text-[4.5rem] font-medium leading-[1.5] sm:leading-[1.5]" style={{ marginBottom: "0.67em" }}>
             Others find properties.<br />We find homes.
           </h1>
           <div className="flex justify-center">
             <Link
               href="/off-plan/search"
-              className="inline-block w-3/4 !bg-[#ef4136] !text-[#fefefe] text-[16px] leading-[normal] font-medium rounded-[20px] pt-[19px] pb-[19px] px-[30px] text-center hover:!bg-[#d63629] hover:rounded-[15px] transition-all"
+              className="inline-block w-3/4 !bg-[#ef4136] !text-[#fefefe] text-[16px] leading-[normal] font-medium rounded-[20px] pt-[14px] pb-[14px] px-[30px] text-center hover:!bg-[#d63629] hover:rounded-[15px] transition-all"
             >
               Find Future Home
             </Link>

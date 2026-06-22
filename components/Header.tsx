@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`Header_header__Z8PUO ${isHome ? "home" : "sub-page"}`}>
+    <header className={`Header_header__Z8PUO ${isHome ? "home" : "sub-page"}`} style={{ backgroundColor: "#ef4136", color: "#fff" }}>
       <a className="SkipNavigationLink_component__2dvdu sr-only" href="#main-content">
         Skip To Main Content
       </a>
@@ -30,14 +30,17 @@ export default function Header() {
         <div className="Header_bar__L8CDF">
           <div className="Header_logo__gECVj">
             <Link title="Home" href="/">
-              <Image
-                src="/findinghome-logo.svg"
-                alt="FindingHome logo"
-                width={190}
-                height={32}
-                priority
-                style={{ maxWidth: "100%", height: "auto" }}
-              />
+              <div style={{ position: "relative", width: "100%", paddingTop: "17.02127659574468%" }}>
+                <Image
+                  src="/findinghome-logo.svg"
+                  alt="FindingHome logo"
+                  fill
+                  priority
+                  className="light_logo"
+                  sizes="100vw"
+                  style={{ objectFit: "contain", objectPosition: "left center" }}
+                />
+              </div>
             </Link>
           </div>
           <button
