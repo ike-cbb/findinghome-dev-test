@@ -9,8 +9,7 @@ export const metadata = {
 const ARTICLE_ID = "what-is-off-plan-and-why-you-need-to-invest-in-dubai";
 const BASE_URL = "https://findinghome.ae";
 const ARTICLE_URL = `${BASE_URL}/guide/${ARTICLE_ID}`;
-const FEATURED_IMAGE =
-  "https://findinghomeprd.wpengine.com/wp-content/uploads/2023/03/es-download-5.jpg";
+const FEATURED_IMAGE = "/assets/listings/TW_BACK.jpg";
 
 const articleIntroduction = `<p><i><span style="font-weight: 400">Learn about the off-plan investment trend in Dubai and what you need to know before making an informed decision. Find out how to identify a great off-plan property in your budget with confidence.</span></i></p>`;
 

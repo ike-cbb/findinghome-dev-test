@@ -22,6 +22,10 @@ export interface ListingProperty {
   floorPlanImage: string;
   logoImage: string;
   logoAlt: string;
+  videoUrl?: string;
+  videoCoverUrl?: string;
+  googleMapLatLang?: string;
+  locationList?: string;
 }
 
 export const listings: ListingProperty[] = [
@@ -57,9 +61,15 @@ export const listings: ListingProperty[] = [
       "MYKONOS_Lagoon.jpg",
       "INTERIOR_1.jpg",
     ],
-    floorPlanImage: "",
+    floorPlanImage: "LAGOONS-Mykonos-Floor-plans-pdf.jpg",
     logoImage: "damac-logo-dark.svg",
     logoAlt: "DAMAC properties",
+    videoUrl:
+      "https://findinghomeprd.wpengine.com/wp-content/uploads/2023/04/Mykonos-Launch-En.mp4",
+    videoCoverUrl: "/assets/listings/MYKONOS_Lagoon.jpg",
+    googleMapLatLang: "25.017198578252458, 55.2437543825842",
+    locationList:
+      "30 minutes, Dubai Marina|30 minutes, Business bay|40 minutes, Dubai international airport|30 minutes, The Palm Jumeirah|25 minutes, The Mall of the Emirates|20 minutes, Dubai Miracle Garden",
   },
   {
     slug: "damac-hills-trump-estates-beverly-hills-drive",

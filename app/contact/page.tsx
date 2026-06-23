@@ -9,8 +9,7 @@ const featuredProperties = [
     propertyType: "Townhouse",
     description:
       "<strong>Beautiful Marina View<br></strong>Mykonos is a luxury building located in DAMAC Lagoons",
-    image:
-      "https://findinghomeprd.wpengine.com/wp-content/uploads/2023/04/TW_BACK.jpg",
+    image: "/assets/listings/TW_BACK.jpg",
     whatsappText: "DAMAC Lagoons - Mykonos - DAMAC Lagoons Enquiry",
   },
   {
@@ -21,8 +20,7 @@ const featuredProperties = [
     propertyType: "Villa",
     description:
       "<strong>Beautiful Marina View<br></strong>Beverly Hills Drive is a luxury building located in DAMAC - Hills",
-    image:
-      "https://findinghomeprd.wpengine.com/wp-content/uploads/2023/03/V51-Front-scaled.jpg",
+    image: "/assets/listings/V51-Front-scaled.jpg",
     whatsappText:
       "DAMAC Hills - Trump Estates Beverly Hills Drive - DAMAC - Hills Enquiry",
   },
@@ -50,7 +48,7 @@ export default function ContactPage() {
               <span className="block mb-5 text-[16px]">
                 Phone:{" "}
                 <a href="tel:+971 58 583 9259">+971 55 701 1419</a> | Email:{" "}
-                <a href="mailto:info@findinghomeprd.wpengine.com">
+                <a href="mailto:info@findinghome.ae">
                   info@findinghome.ae
                 </a>
               </span>
@@ -120,7 +118,7 @@ export default function ContactPage() {
               >
                 <figure className="text-center -mt-[60px] mb-4">
                   <img
-                    src="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/02/Martin.webp"
+                    src="/assets/images/Martin.webp"
                     alt=""
                     width={492}
                     height={492}
@@ -154,7 +152,7 @@ export default function ContactPage() {
               >
                 <figure className="text-center -mt-[60px] mb-4">
                   <img
-                    src="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/07/Maria-findinf-home.webp"
+                    src="/assets/images/Maria-findinf-home.webp"
                     alt=""
                     width={577}
                     height={577}
@@ -261,13 +259,10 @@ export default function ContactPage() {
                       href={`mailto:info@findinghome.ae?subject=${encodeURIComponent(property.title)}`}
                       className="inline-block rounded-[3px] bg-[#fefefe] text-[#ef4136] px-3 py-2 no-underline hover:bg-[#f5f5f5] transition-colors"
                     >
-                      <img
-                        src="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/02/icon-mail.svg"
-                        alt="Email"
-                        width={25}
-                        height={20}
-                        style={{ width: "25px" }}
-                      />
+                      <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="24" height="19" rx="1.5" stroke="#ef4136"/>
+                        <path d="M0.5 3L12 11L24 3" stroke="#ef4136" strokeWidth="1.5"/>
+                      </svg>
                     </a>
 
                     <a
@@ -276,13 +271,9 @@ export default function ContactPage() {
                       rel="noreferrer"
                       className="inline-block rounded-[3px] bg-[#ef4136] text-[#fefefe] px-3 py-2 no-underline hover:bg-[#d63629] transition-colors"
                     >
-                      <img
-                        src="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/02/icons8-whatsapp.svg"
-                        alt="WhatsApp"
-                        width={24}
-                        height={24}
-                        style={{ width: "24px" }}
-                      />
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#fefefe" d="M12.012 2C6.506 2 2.023 6.478 2.021 11.984c-.001 1.76.46 3.478 1.334 4.992L2 22l5.232-1.236A10.02 10.02 0 0012.01 21.978h.004c5.505 0 9.985-4.48 9.988-9.984.002-2.67-1.036-5.179-2.922-7.067C17.19 3.04 14.684 2 12.012 2zm-.002 2c2.136.001 4.143.834 5.652 2.342s2.338 3.516 2.336 5.65c-.002 4.404-3.584 7.987-7.99 7.987-1.333-.001-2.654-.336-3.817-.971l-.674-.367-.744.176-1.969.465.48-1.785.217-.8-.414-.72a7.97 7.97 0 01-1.066-3.991c.002-4.402 3.585-7.984 7.988-7.984zm-3.533 3.375c-.167 0-.437.062-.666.312s-.875 1.102-.875 2.08.896 2.415 1.02 2.582c.124.166 1.726 2.766 4.263 3.766 2.108.831 2.536.667 2.994.625.458-.041 1.478-.603 1.686-1.186.208-.583.208-1.084.146-1.187-.062-.104-.228-.166-.478-.291s-1.476-.728-1.705-.81c-.229-.083-.396-.125-.562.125-.166.25-.573.81-.719.977-.146.167-.291.19-.541.064s-1.054-.39-2.008-1.24c-.742-.661-1.243-1.477-1.389-1.727-.145-.25-.013-.386.112-.51.112-.112.248-.291.373-.437.124-.146.167-.25.25-.416.083-.166.04-.312-.02-.437-.062-.125-.548-1.358-.77-1.852-.187-.414-.384-.424-.562-.43-.146-.007-.311-.007-.477-.007z"/>
+                      </svg>
                     </a>
                   </div>
                 </div>
