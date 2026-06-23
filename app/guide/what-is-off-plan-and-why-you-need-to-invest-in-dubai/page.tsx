@@ -116,7 +116,7 @@ export default function GuidePage() {
   return (
     <article>
       {/* Hero: full-width background image */}
-      <section className="relative h-[550px] overflow-hidden">
+      <section className="relative ml-[5%] mr-[5%] h-[550px] h-[550px] overflow-hidden">
         <Image
           src={FEATURED_IMAGE}
           alt=""
