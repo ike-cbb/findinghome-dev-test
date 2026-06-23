@@ -105,8 +105,9 @@ export default function HomepageListings() {
                           }
                         }}
                         tabIndex={0}
-                        className="cursor-pointer text-base font-[Poppins] px-5 transition-colors"
+                        className="cursor-pointer font-[Poppins] px-5 transition-colors"
                         style={{
+                          fontSize: "14px",
                           paddingTop: "10px",
                           paddingBottom: "10px",
                           borderBottom:

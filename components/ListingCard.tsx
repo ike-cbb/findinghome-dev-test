@@ -94,8 +94,8 @@ export default function ListingCard({ property }: ListingCardProps) {
 
           {/* Title + Community */}
           <p
-            className="m-0 mb-[10px] text-sm"
-            style={{ color: "#898880" }}
+            className="m-0 mb-[10px]"
+            style={{ color: "#010101", fontSize: "16px" }}
           >
             {property.title}, {property.community}
           </p>
@@ -117,7 +117,7 @@ export default function ListingCard({ property }: ListingCardProps) {
                 className="m-0"
                 style={{
                   color: "#010101",
-                  fontSize: "14px",
+                  fontSize: "16px",
                   fontWeight: 500,
                 }}
               >
@@ -137,7 +137,7 @@ export default function ListingCard({ property }: ListingCardProps) {
                 className="m-0"
                 style={{
                   color: "#010101",
-                  fontSize: "14px",
+                  fontSize: "16px",
                   fontWeight: 500,
                 }}
               >
@@ -157,7 +157,7 @@ export default function ListingCard({ property }: ListingCardProps) {
                 className="m-0"
                 style={{
                   color: "#010101",
-                  fontSize: "14px",
+                  fontSize: "16px",
                   fontWeight: 500,
                 }}
               >

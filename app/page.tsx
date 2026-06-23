@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <article>
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-[160px] sm:pt-[250px] pb-[60px] sm:pb-[180px] px-[5%]">
+      <section className="relative overflow-hidden pt-[160px] sm:pt-[250px] pb-[60px] sm:pb-[250px] px-[5%]">
         <div className="absolute inset-0">
           <Image
             src="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/02/home-hero-scaled.webp"
@@ -94,7 +94,7 @@ export default function HomePage() {
         <div className="max-w-[1400px] mx-auto">
 
           <div className="flex flex-col lg:flex-row" style={{ padding: "0 4%", gap: "2rem" }}>
-            <h2 className="font-normal text-[#010101] leading-[1.1] lg:basis-[55%]" style={{ fontSize: "6rem", fontStyle: "normal", marginBottom: "40px", lineHeight: "1.1" }}>
+            <h2 className="font-normal text-[#010101] leading-[1.1] lg:basis-[64%]" style={{ fontSize: "6rem", fontStyle: "normal", marginBottom: "40px", lineHeight: "1.1" }}>
               Finding a Home is the Biggest Decision We&rsquo;ll Ever Make
             </h2>
           </div>
@@ -306,7 +306,7 @@ export default function HomePage() {
                   <option>Other</option>
                 </select>
                 <textarea
-                  placeholder="Message"
+                  placeholder="How can we help you?"
                   rows={4}
                   className="w-full outline-none block"
                   style={{
