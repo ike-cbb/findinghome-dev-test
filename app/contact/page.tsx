@@ -1,30 +1,7 @@
 import Link from "next/link";
+import { listings } from "@/lib/data";
 
-const featuredProperties = [
-  {
-    slug: "damac-lagoons-mykonos-cluster",
-    title: "DAMAC Lagoons - Mykonos",
-    location: "Mykonos, DAMAC Lagoons",
-    developer: "DAMAC properties",
-    propertyType: "Townhouse",
-    description:
-      "<strong>Beautiful Marina View<br></strong>Mykonos is a luxury building located in DAMAC Lagoons",
-    image: "/assets/listings/TW_BACK.jpg",
-    whatsappText: "DAMAC Lagoons - Mykonos - DAMAC Lagoons Enquiry",
-  },
-  {
-    slug: "damac-hills-trump-estates-beverly-hills-drive",
-    title: "DAMAC Hills - Trump Estates Beverly Hills Drive",
-    location: "Beverly Hills Drive, DAMAC - Hills",
-    developer: "DAMAC properties",
-    propertyType: "Villa",
-    description:
-      "<strong>Beautiful Marina View<br></strong>Beverly Hills Drive is a luxury building located in DAMAC - Hills",
-    image: "/assets/listings/V51-Front-scaled.jpg",
-    whatsappText:
-      "DAMAC Hills - Trump Estates Beverly Hills Drive - DAMAC - Hills Enquiry",
-  },
-];
+const featuredProperties = listings.slice(2, 4); // Venice + Verde — different from off-plan page (slice 0,2)
 
 export const metadata = {
   title: "Contact - Finding Home",
@@ -202,7 +179,7 @@ export default function ContactPage() {
               <div key={property.slug} className="flex-[1_1_300px]">
                 <figure className="m-0 cursor-pointer h-[250px] overflow-hidden">
                   <img
-                    src={property.image}
+                    src={`/assets/listings/${property.heroImage}`}
                     alt=""
                     width={1024}
                     height={628}
@@ -226,26 +203,25 @@ export default function ContactPage() {
                   </h4>
 
                   <p className="text-[#010101] mb-[1.2em]">
-                    {property.location}
+                    {property.community}, {property.city}
                   </p>
 
                   <p className="text-[#010101] mb-[1.2em]">
                     Developer:
-                    <strong> {property.developer}</strong>
+                    <strong> {property.developerName}</strong>
                   </p>
 
                   <p className="mb-[1.2em]">
                     Property Type:
-                    <strong> {property.propertyType}</strong>
+                    <strong> {property.propertyTypes.replace(/<[^>]*>/g, "")}</strong>
                   </p>
 
                   <p
                     className="mb-[1.2em]"
                     style={{ fontSize: "14px" }}
-                    dangerouslySetInnerHTML={{
-                      __html: property.description,
-                    }}
-                  />
+                  >
+                    {property.aboutDescription.replace(/<[^>]*>/g, "").substring(0, 120)}...
+                  </p>
 
                   <div className="flex gap-[5px]">
                     <Link
@@ -266,7 +242,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href={`https://wa.me/+971585839259?text=${encodeURIComponent(property.whatsappText)}`}
+                      href={`https://wa.me/+971585839259?text=${encodeURIComponent(property.title + " Enquiry")}`}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-block rounded-[3px] bg-[#ef4136] text-[#fefefe] px-3 py-2 no-underline hover:bg-[#d63629] transition-colors"

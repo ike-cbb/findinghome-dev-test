@@ -67,6 +67,40 @@ export default async function PropertyDetailPage({
     .map((step) => step.trim())
     .filter(Boolean);
 
+  // Split each step into bold label + detail text
+  interface PaymentCell {
+    bold: string;
+    detail: string;
+    isDownload?: boolean;
+  }
+  // Match live site: show max 9 payment steps (4 full rows + 1 cell before download)
+  const cells: PaymentCell[] = paymentSteps.slice(0, 9).map((step) => {
+    const commaIdx = step.indexOf(",");
+    const bold = commaIdx > -1 ? step.slice(0, commaIdx).trim() : step;
+    const detail = commaIdx > -1 ? step.slice(commaIdx + 1).trim() : "";
+    return { bold, detail };
+  });
+
+  // Pair into rows of 2; fill empty right cell with download button
+  const paymentRows: { left: PaymentCell; right: PaymentCell | null }[] = [];
+  for (let i = 0; i < cells.length; i += 2) {
+    const left = cells[i];
+    const right = cells[i + 1] ?? null;
+    paymentRows.push({ left, right });
+  }
+
+  // Put download button in the right cell of the last row if it's empty,
+  // otherwise append a new row
+  const lastRow = paymentRows[paymentRows.length - 1];
+  if (!lastRow.right) {
+    lastRow.right = { bold: "Download Payment Plan", detail: "", isDownload: true };
+  } else {
+    paymentRows.push({
+      left: { bold: "Download Payment Plan", detail: "", isDownload: true },
+      right: null,
+    });
+  }
+
   return (
     <article>
       {/* Breadcrumbs */}
@@ -408,63 +442,258 @@ export default async function PropertyDetailPage({
       </section>
 
       {/* Payment Plan */}
-      <section id="payment-plan" className="px-[5%] py-[5%]">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400 }}>
-            Payment Plan
-          </h2>
-          <p style={{ fontSize: "24px" }}>80% During construction, 20% On completion</p>
-          <table className="w-full border-collapse">
-            <tbody>
-              {paymentSteps
-                .reduce((rows: { left: string; right: string }[], step, i) => {
-                  const pairIndex = Math.floor(i / 2);
-                  if (i % 2 === 0) {
-                    rows.push({ left: step, right: "" });
-                  } else {
-                    rows[pairIndex].right = step;
-                  }
-                  return rows;
-                }, [])
-                .map((row, i) => (
-                  <tr key={i}>
-                    <td className="text-center py-2 px-4 border border-[#e0e0e0]">
-                      <strong>{row.left.split(",")[0]}</strong>
-                      <br />
-                      {row.left.split(",").slice(1).join(",")}
-                    </td>
-                    <td className="text-center py-2 px-4 border border-[#e0e0e0]">
-                      {row.right && (
-                        <>
-                          <strong>{row.right.split(",")[0]}</strong>
-                          <br />
-                          {row.right.split(",").slice(1).join(",")}
-                        </>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+      <section
+        id="payment-plan"
+        className="relative flex items-center px-[5%]"
+        style={{ minHeight: "800px", fontFamily: "'Poppins', sans-serif" }}
+      >
+        {/* Full-height background image on the left 36% — matches WordPress .gb-container-image-wrap */}
+        <div className="absolute top-0 left-0 h-full hidden md:block" style={{ width: "36%", zIndex: 0 }}>
+          <Image
+            src="/assets/payment-plan-bg.webp"
+            alt=""
+            fill
+            sizes="36vw"
+            className="object-cover"
+          />
+          {/* Dim overlay for readability — common in Genesis Blocks */}
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.15)" }} />
+          {/* Red accent bar — matches .gb-container-image-wrap:before */}
+          <div
+            style={{
+              position: "absolute",
+              right: "-30px",
+              bottom: 0,
+              width: "30px",
+              height: "40%",
+              background: "#ef4136",
+            }}
+          />
+        </div>
+
+        {/* Content — positioned relative to sit above the background image */}
+        <div className="relative w-full max-w-[1200px] mx-auto" style={{ zIndex: 1 }}>
+          <div className="flex flex-wrap" style={{ gap: "0" }}>
+            {/* Spacer column matching the 36% image width */}
+            <div className="hidden md:block" style={{ width: "36%" }} />
+            {/* Table column */}
+            <div className="flex-1 md:pl-[50px]" style={{ minWidth: 0 }}>
+              <h2
+                className="m-0 mb-1"
+                style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400 }}
+              >
+                Payment Plan
+              </h2>
+              <p className="m-0 mb-4" style={{ fontSize: "24px" }}>
+                80% During construction, 20% On completion
+              </p>
+              <table className="w-full" style={{ borderSpacing: 0, tableLayout: "fixed" }}>
+                <tbody>
+                  {paymentRows.map((row, i) => {
+                    const isDownloadRow = row.left.isDownload;
+                    const renderCell = (
+                      cell: PaymentCell | null,
+                      colIndex: number,
+                    ) => {
+                      if (!cell) {
+                        return (
+                          <td
+                            key={colIndex}
+                            style={{
+                              border: "none",
+                              padding: "15px",
+                              width: "50%",
+                            }}
+                          />
+                        );
+                      }
+                      const lastPaymentRowIdx = paymentRows[paymentRows.length - 1].right?.isDownload
+                        ? paymentRows.length - 1
+                        : paymentRows.length - 2;
+                      const isLastPaymentRow = i === lastPaymentRowIdx;
+                      const isGreen =
+                        !isDownloadRow &&
+                        isLastPaymentRow &&
+                        (paymentRows[lastPaymentRowIdx].right?.isDownload
+                          ? colIndex === 0
+                          : colIndex === 1);
+                      const isPink =
+                        !isDownloadRow &&
+                        !cell.isDownload &&
+                        !isGreen &&
+                        (i + colIndex) % 2 !== 0;
+                      return (
+                        <td
+                          key={colIndex}
+                          style={{
+                            border: "none",
+                            borderBottom: isGreen
+                              ? "1px solid #8eee9c"
+                              : "1px solid #fde2e1",
+                            borderTop: isGreen ? "1px solid #8eee9c" : undefined,
+                            padding: "15px",
+                            width: "50%",
+                            fontSize: "16px",
+                            textAlign: "center",
+                            backgroundColor: isGreen
+                              ? "rgba(142,238,156,.2)"
+                              : isPink
+                                ? "hsla(2,88%,94%,.2)"
+                                : undefined,
+                          }}
+                        >
+                          {cell.isDownload ? (
+                            <strong style={{ fontWeight: 500 }}>
+                              <a
+                                href="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/03/paymentplan.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                  color: "#ef4136",
+                                  backgroundColor: "#fde2e1",
+                                  display: "inline-block",
+                                  padding: "14px 30px",
+                                  borderRadius: "3px",
+                                  textDecoration: "none",
+                                  width: "100%",
+                                  cursor: "pointer",
+                                }}
+                              >
+                                Download Payment Plan
+                              </a>
+                            </strong>
+                          ) : (
+                            <>
+                              <strong style={{ fontWeight: 500 }}>{cell.bold}</strong>
+                              {cell.detail && (
+                                <>
+                                  <br />
+                                  {cell.detail}
+                                </>
+                              )}
+                            </>
+                          )}
+                        </td>
+                      );
+                    };
+                    return (
+                      <tr
+                        key={i}
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          gap: "15px",
+                          borderBottom: "none",
+                        }}
+                      >
+                        {renderCell(row.left, 0)}
+                        {renderCell(row.right, 1)}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+              <p className="text-[#767676] m-0 mt-5" style={{ fontStyle: "normal", fontWeight: 500 }}>
+                Permit#: 0705888731
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Permit Number */}
-      <div className="px-[5%] pb-[5%] max-w-[1200px] mx-auto">
-        <p className="text-[#767676] m-0" style={{ fontStyle: "normal", fontWeight: 500 }}>
-          Permit#: 0705888731
-        </p>
-      </div>
+      {/* Featured Off-Plan & Investments */}
+      <section className="px-[5%]" style={{ paddingTop: "60px", paddingBottom: "60px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <h3 className="text-[#010101] font-medium" style={{ fontSize: "4rem", marginBottom: "40px" }}>
+            Featured Off-Plan &amp; Investments
+          </h3>
 
-      {/* Back Link */}
-      <div className="px-[5%] pb-[10%] max-w-[1200px] mx-auto">
-        <Link
-          href="/off-plan"
-          className="inline-block rounded-[3px] bg-[#ef4136] text-white text-[18px] px-10 py-[15px] font-medium no-underline hover:bg-[#d63629] transition-colors"
-        >
-          View All Off-Plan Properties
-        </Link>
-      </div>
+          <div className="flex flex-col lg:flex-row" style={{ gap: "35px" }}>
+            {listings
+              .filter((p) => p.slug !== slug)
+              .slice(0, 2)
+              .map((p) => (
+                <div key={p.slug} className="lg:max-w-[50%]" style={{ position: "relative", transition: "all .3s" }}>
+                  <figure className="m-0 overflow-hidden" style={{ cursor: "pointer" }}>
+                    <Image
+                      src={`/assets/listings/${p.heroImage}`}
+                      alt={p.title}
+                      width={1024}
+                      height={628}
+                      className="w-full object-cover"
+                      style={{ height: "270px", transform: "scale(1.1)" }}
+                    />
+                  </figure>
+
+                  <div
+                    className="flex flex-col justify-center"
+                    style={{ background: "hsla(2,88%,94%,.5)", padding: "30px 40px" }}
+                  >
+                    <h4
+                      className="text-[#010101] font-bold"
+                      style={{ fontSize: "24px", marginBottom: "5px" }}
+                    >
+                      {p.title}
+                    </h4>
+                    <p className="text-[#010101]" style={{ marginBottom: "10px" }}>
+                      {p.community}
+                    </p>
+                    <p className="text-[#010101]" style={{ marginBottom: "10px" }}>
+                      Developer: <strong style={{ fontWeight: 700 }}>{p.developerName}</strong>
+                    </p>
+                    <p style={{ marginBottom: "10px" }}>
+                      Property Type: <strong style={{ fontWeight: 700 }}>{p.propertyTypes.replace(/<[^>]*>/g, "").split("|")[0]?.trim()?.split(",")[0]?.trim()}</strong>
+                    </p>
+                    <p className="text-[#010101]" style={{ fontSize: "14px", marginBottom: "10px" }}>
+                      {p.aboutDescription.replace(/<[^>]*>/g, "").substring(0, 150)}...
+                    </p>
+
+                    <div className="flex items-center" style={{ gap: "10px", paddingTop: "15px", position: "relative" }}>
+                      <Link
+                        href={`/off-plan/${p.slug}`}
+                        className="inline-flex items-center rounded-[3px] cursor-pointer no-underline"
+                        style={{ color: "#ef4136", backgroundColor: "#fefefe", padding: "3px 20px", fontSize: "18px", fontWeight: 400, height: "40px" }}
+                      >
+                        View Detail
+                      </Link>
+                      <a
+                        href={`mailto:info@findinghome.ae?subject=${encodeURIComponent(p.title)}`}
+                        className="inline-flex items-center justify-center rounded-[3px] flex-shrink-0"
+                        style={{ backgroundColor: "#fefefe", padding: "3px 20px", height: "40px" }}
+                      >
+                        <svg width="25" height="20" viewBox="0 0 25 20" fill="none">
+                          <rect x="1" y="1" width="23" height="18" rx="2" stroke="#ef4136" strokeWidth="1.5" />
+                          <path d="M1 4l11.5 8L24 4" stroke="#ef4136" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </a>
+                      <a
+                        href={`https://wa.me/+971585839259?text=${encodeURIComponent(p.title + " Enquiry")}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center rounded-[3px] flex-shrink-0"
+                        style={{ backgroundColor: "#ef4136", padding: "3px 20px", height: "40px" }}
+                      >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#fefefe">
+                          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.4.7 4.643 1.914 6.543L.396 23.604l5.243-1.382A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.1 0-4.05-.54-5.758-1.485l-.405-.228-3.12.822.84-3.044-.255-.405A9.94 9.94 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm5.5-7.5c-.3-.15-1.77-.873-2.044-.973-.275-.1-.475-.15-.675.15-.2.3-.775.973-.95 1.173-.175.2-.35.225-.65.075-.3-.15-1.266-.467-2.413-1.49-.892-.795-1.494-1.777-1.668-2.077-.175-.3-.018-.463.132-.613.135-.135.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.627-.925-2.227-.243-.583-.49-.504-.675-.514-.173-.01-.375-.012-.575-.012s-.525.075-.8.375c-.275.3-1.05 1.026-1.05 2.502s1.075 2.902 1.225 3.102c.15.2 2.113 3.228 5.12 4.527.717.31 1.277.495 1.713.634.72.229 1.375.197 1.892.12.577-.087 1.77-.724 2.02-1.423.25-.7.25-1.3.175-1.423-.075-.125-.275-.2-.575-.35z" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+
+          <div className="flex justify-center" style={{ paddingTop: "30px" }}>
+            <Link
+              href="/off-plan/search"
+              className="inline-block bg-[#ef4136] text-[#fefefe] font-medium rounded-[3px] py-4 text-center hover:bg-[#d63629] hover:rounded-[15px] transition-all"
+              style={{ fontSize: "18px", paddingLeft: "40px", paddingRight: "40px" }}
+            >
+              See all Off-Plan Projects
+            </Link>
+          </div>
+        </div>
+      </section>
     </article>
   );
 }
