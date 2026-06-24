@@ -3,6 +3,7 @@ import { ListingProperty } from "./data";
 export interface FilterState {
   search: string;
   community: string;
+  propertyType: string;
   bedrooms: string;
   developer: string;
   completionYear: string;
@@ -27,6 +28,27 @@ export function filterListings(
       if (!searchable.includes(q)) return false;
     }
 
+    // Property type filter
+    if (filters.propertyType && filters.propertyType !== "all") {
+      const types = property.propertyTypes.toLowerCase();
+      const category = filters.propertyType.toLowerCase();
+
+      // Apartment matches: studio, apartment, 1-3 bedrooms (smaller units without villa/townhouse)
+      if (category === "apartment") {
+        const isSmallUnit = /\b(?:studio|apartment|1\s*bedroom|2\s*bedroom|3\s*bedroom)\b/i.test(types);
+        const isVillaOrTownhouse = /\b(?:villa|townhouse|4\s*bedroom|5\s*bedroom|6\s*bedroom|7\s*bedroom)\b/i.test(types);
+        if (!isSmallUnit || isVillaOrTownhouse) return false;
+      }
+      // Villa matches: villa, 4-7 bedrooms
+      else if (category === "villa") {
+        if (!/\b(?:villa|4\s*bedroom|5\s*bedroom|6\s*bedroom|7\s*bedroom)\b/i.test(types)) return false;
+      }
+      // Other categories: direct substring match
+      else if (!types.includes(category)) {
+        return false;
+      }
+    }
+
     // Community filter
     if (filters.community && filters.community !== "all") {
       if (property.community !== filters.community) return false;
@@ -35,13 +57,20 @@ export function filterListings(
     // Bedroom filter
     if (filters.bedrooms && filters.bedrooms !== "all") {
       const beds = property.bedrooms.toLowerCase();
-      if (filters.bedrooms === "studio") {
+      const value = filters.bedrooms;
+
+      if (value === "Studio") {
         if (!beds.includes("studio")) return false;
+      } else if (value === "5+ Bed") {
+        // Match 5, 6, 7, 8 bedrooms
+        if (!/[5-9]/.test(beds) && !/\b1[0-9]\b/.test(beds)) return false;
       } else {
-        const bedNumber = filters.bedrooms;
-        // Match exact bedroom count (e.g., "7" matches "7" but also "| 7" and "7 |")
-        const bedPattern = new RegExp(`\\b${bedNumber}\\b`);
-        if (!bedPattern.test(beds)) return false;
+        // "1 Bed", "2 Bed", "3 Bed", "4 Bed" — extract the number
+        const num = value.match(/\d+/)?.[0];
+        if (num) {
+          const pattern = new RegExp(`\\b${num}\\b`);
+          if (!pattern.test(beds)) return false;
+        }
       }
     }
 
@@ -73,6 +102,7 @@ export function filterListings(
 export const defaultFilters: FilterState = {
   search: "",
   community: "all",
+  propertyType: "all",
   bedrooms: "all",
   developer: "all",
   completionYear: "all",

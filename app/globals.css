@@ -264,3 +264,220 @@ input::placeholder,
 textarea::placeholder {
   color: #000;
 }
+
+/* =============================================================
+   /off-plan/search — mirror of production visual styling
+   (matches https://findinghome.ae/off-plan/search)
+   Selectors are scoped to the search page structure.
+   ============================================================= */
+
+section.pt-12.lg\:pt-16.pb-6.px-5,
+section.pb-16.lg\:pb-24.px-5 {
+  padding: 24px 24px !important;
+}
+section.pt-12.lg\:pt-16.pb-6.px-5 > .max-w-\[1200px\],
+section.pb-16.lg\:pb-24.px-5 > .max-w-\[1200px\] {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* "Clear All Filters" is now a real element inside PropertySearchFilter */
+
+/* "Back to map view" link — matches WordPress .back-to-map */
+section.pb-16.lg\:pb-24.px-5 .back-to-map {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  color: #b2b1aa !important;
+  font-family: 'Poppins', sans-serif !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 1 !important;
+}
+section.pb-16.lg\:pb-24.px-5 .back-to-map span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+  color: #b2b1aa !important;
+}
+section.pb-16.lg\:pb-24.px-5 .back-to-map img {
+  margin-right: 5px !important;
+  transform: rotate(90deg) !important;
+  width: 12px !important;
+  height: auto !important;
+  transition: margin-right .3s ease !important;
+}
+
+section.pb-16.lg\:pb-24.px-5 .back-to-map:hover img {
+  margin-right: 10px !important;
+}
+
+/* Spacer for the absolutely-positioned back-to-map link */
+section.pb-16.lg\:pb-24.px-5 .max-w-\[1200px\] {
+  padding-top: 60px !important;
+  position: relative !important;
+}
+
+/* Each card row (image left, grey text panel right) — matches .list_col */
+section.pb-16.lg\:pb-24.px-5 .list-col {
+  display: flex !important;
+  flex-direction: row !important;
+  margin: 0 0 20px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Image column (carousel) — matches .col_img, stretches to match text col */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-img {
+  flex: 0 0 569px !important;
+  max-width: 569px !important;
+  height: auto !important;
+  min-height: 408px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  align-self: stretch !important;
+}
+
+/* Make the card row align both columns to the same height */
+section.pb-16.lg\:pb-24.px-5 .list-col {
+  align-items: stretch !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transform: none !important;
+}
+
+/* Details column — matches .col_txt .de_tails */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt {
+  flex: 1 1 auto !important;
+  background-color: #f8f8f8 !important;
+  padding: 4% 4% 4% 40px !important;
+  min-width: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Type label — matches .type */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .type {
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  line-height: 21px !important;
+  color: #000 !important;
+  margin: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Price — matches .pri_ce */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .pri-ce {
+  font-size: 25px !important;
+  font-weight: 500 !important;
+  line-height: 37.5px !important;
+  color: #000 !important;
+  margin: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Location — matches .loca_tion */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .loca-tion {
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  line-height: 27px !important;
+  color: #000 !important;
+  margin: 0 0 20px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Amenities — matches .short_desc (green) */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .short-desc {
+  color: #00ac44 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  margin: 0 0 20px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-style: normal !important;
+}
+
+/* Beds / Baths / Sqft — matches .si_ze */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .si-ze {
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  line-height: 24px !important;
+  color: #000 !important;
+  margin: 0 0 20px !important;
+  padding-top: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .si-ze span {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  color: #000 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .si-ze img {
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Developer line — matches .short_desc2 */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .short-desc2 {
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  line-height: 21px !important;
+  color: #000 !important;
+  margin: 0 0 20px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .short-desc2 strong {
+  font-weight: 700 !important;
+  color: #000 !important;
+}
+
+/* Buttons — matches .bt_wraps .bt_view */
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-wraps {
+  padding-top: 15px !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a {
+  border-radius: 3px !important;
+  font-family: 'Poppins', sans-serif !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  padding: 8px 22px !important;
+  line-height: 1 !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a[href^="/off-plan/"] {
+  color: #ef4136 !important;
+  background-color: #fefefe !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a[href^="mailto:"] {
+  color: #ef4136 !important;
+  background-color: #fefefe !important;
+  padding: 8px 12px !important;
+}
+section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a[href^="https://wa.me"] {
+  color: #fefefe !important;
+  background-color: #ef4136 !important;
+  padding: 8px 12px !important;
+}

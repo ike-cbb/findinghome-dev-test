@@ -1,6 +1,7 @@
 export interface ListingProperty {
   slug: string;
   title: string;
+  shortName: string;
   priceMin: number;
   priceMax: number;
   bedrooms: string;
@@ -14,6 +15,8 @@ export interface ListingProperty {
   aboutDescription: string;
   amenities: string;
   propertyTypes: string;
+  propertyType: string;
+  amenitiesShort: string;
   paymentPlan: string;
   locationDescription: string;
   developerSummary: string;
@@ -48,6 +51,10 @@ export const listings: ListingProperty[] = [
       "<p>WindMill Island Park |</p><p>Pool Bar &amp; Floating Garden |</p><p>Luxury Pool Floats |</p><p>Swings, Sunken Seating and Lounge at Paradise Beach |</p><p>The Volcanis Stones Park |</p><p>Beach Club and Cafés |</p><p>Open Air Glow Lounge |</p><p>Honey Bar&nbsp;</p>",
     propertyTypes:
       "<p>4 bedroom, from AED 2,470,000 |</p><p>5 bedroom, from AED 3,280,000</p>",
+    propertyType: "Townhouse",
+    shortName: "Mykonos",
+    amenitiesShort:
+      "Swimming Pools | Fitness Centres | Security | Play Ground | Dining",
     paymentPlan:
       "<p>Downpayment 20 %, On booking |<br />1st Installment 5 %, Within 3 Months of Sale |<br />2nd Installment 5 %, Within 6 Months of Sale |<br />3rd Installment 5 %, Within 9 Months of Sale |<br />4th Installment 5 %, Within 12 Months of Sale |<br />5th Installment 5 %, Within 15 Months of Sale |<br />6th Installment 5 %, Within 18 Months of Sale |<br />7th Installment 5 %, Within 21 Months of Sale |<br />8th Installment 5 %, Within 24 Months of Sale |<br />9th Installment 5 %, Within 27 Months of Sale |<br />10th Installment 5 %, Within 30 Months of Sale |<br />11th Installment 5 %, Within 33 Months of Sale |<br />12th Installment 2 %, On 70 % Completion|<br />13th Installment 2 %, On 80 % Completion|<br />14th Installment 1 %, On 90 % Completion|<br />15th Installment 20 %, On Completion|</p>",
     locationDescription:
@@ -89,18 +96,20 @@ export const listings: ListingProperty[] = [
     amenities:
       "<p>Golf course and Trump Golf Clubhouse |<br />Private Swimming Pool |<br />Beach Waves Pool |<br />Sports Facilities |<br />Shopping &amp; Retail</p>",
     propertyTypes: "<p>7 Bedroom Villas</p>",
+    propertyType: "Villa",
+    shortName: "Beverly Hills Drive",
+    amenitiesShort:
+      "Swimming Pools | Security | Shopping | Community Center | Golf Course",
     paymentPlan:
       "<p>Downpayment 24 %, On booking |<br />1st Installment 6 %, Within 4 Months of Sale |<br />2nd Installment 6 %, Within 8 Months of Sale |<br />3rd Installment 6 %, Within 12 Months of Sale |<br />4th Installment 6 %, Within 16 Months of Sale |<br />5th Installment 6 %, Within 20 Months of Sale |<br />6th Installment 6 %, Within 24 Months of Sale |<br />Final Installment 40 %, On Completion|</p>",
     locationDescription:
       "<p>The villa sits within the exclusive Trump Estates enclave, inside the prestigious Trump International Golf Club, Dubai.</p>",
     developerSummary:
       "<p>DAMAC Properties has been at the forefront of the Middle East's luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region.</p>",
-    heroImage: "V51-Front-scaled.jpg",
+    heroImage: "V51-Rear-min-scaled.jpg",
     galleryImages: [
-      "V51-Front-1-scaled.jpg",
       "V50-jacuzzi_20220719-Edited-min-scaled.jpg",
       "V50-rear-From-Golf-View-Landscape-02-B-min-1-scaled.jpg",
-      "Trump-Dubai-17th-putting-0102-scaled.jpg",
     ],
     floorPlanImage: "05.08.22-BH-FLOORPLAN-BROCHURE-pdf.jpg",
     logoImage: "damac-logo-dark.svg",
@@ -124,6 +133,10 @@ export const listings: ListingProperty[] = [
     amenities:
       "<p>White Sandy beaches |<br />Wave Pool |<br />Fitness &amp; wellness zone |<br />Floating cinema |<br />Observatory |<br />Music pavilion |<br />Ladies Hub |<br />Sports facilities</p>",
     propertyTypes: "<p>6 Bedroom Villas</p>",
+    propertyType: "Villa",
+    shortName: "Venice cluster",
+    amenitiesShort:
+      "Fitness Centres | Security | Shopping | Community Center | Play Ground | Dining",
     paymentPlan:
       "<p>Downpayment 20 %, On booking |<br />1st Installment 10 %, Within 5 Months of Sale |<br />2nd Installment 10 %, Within 9 Months of Sale |<br />3rd Installment 10 %, Within 13 Months of Sale |<br />4th Installment 10 %, Within 17 Months of Sale |<br />5th Installment 10 %, Within 21 Months of Sale |<br />6th Installment 10 %, Within 25 Months of Sale |<br />Final Installment 20 %, On Completion|</p>",
     locationDescription:
@@ -160,6 +173,10 @@ export const listings: ListingProperty[] = [
       "<p>Retail Outlets |</p><p>Gym |</p><p>Restaurants |</p><p>Swimming Pool |</p><p>Children Play Area |</p><p>BBQ Area |</p><p>Lush Green Parks |</p>",
     propertyTypes:
       "<p>1 bedroom |</p><p>2 Bedrooms |</p><p>3 bedrooms</p>",
+    propertyType: "Apartment",
+    shortName: "Verde By Sobha",
+    amenitiesShort:
+      "Fitness Centres | Shopping | Garden | Play Ground | Dining",
     paymentPlan:
       "<p>20 % on booking |</p><p>1st Installment 10 % |</p><p>2nd Installment 10 %|</p><p>3rd Installment  10 % |</p><p>4th Installment 10 % |</p><p>5th Installment  10 % |</p><p>Sixth Installment 10 % |</p><p>Final Installment 20 % |</p>",
     locationDescription:
@@ -169,7 +186,6 @@ export const listings: ListingProperty[] = [
     heroImage: "Verde-by-Sobha.webp",
     galleryImages: [
       "sobha_verde_jlt_3.webp",
-      "sobha_verde_jlt_4.webp",
       "sobha_verde_jlt_5.webp",
     ],
     floorPlanImage: "Floorplan-1-pdf.jpg",
@@ -195,6 +211,10 @@ export const listings: ListingProperty[] = [
       "<p>Outdoor gym |<br />Infinity Pool |<br />Lazy river |<br />Juice Bar |<br />Party Zone |</p><p>Spa</p>",
     propertyTypes:
       "<p>Studio, From AED 823,000 |<br />1 Bedroom, From AED 1,503,000 | <br />2 Bedrooms, From AED 2,739,000</p>",
+    propertyType: "Apartment",
+    shortName: "Chic Tower",
+    amenitiesShort:
+      "Swimming Pools | Fitness Centres | Spa Areas | Shopping | Play Ground",
     paymentPlan:
       "<p>Down Payment — 20%,<br />On booking |<br /><br />1st to 4th Installment — 20%,<br />Within 12 months (5% Quarterly) from booking date |<br /><br />5th to 13th Installment — 20%,<br />Within 39 months (4% Quarterly) from booking date |</p><p>14th Installment — 1%,<br />On 70% construction completion |</p><p>15th Installment — 1%,<br />On 80% construction completion |</p><p>16th Installment— 1%,<br />On 90% construction completion |</p><p>17th Installment — 1%,<br />On 95% construction completion |</p><p>Final Installment — 20%,<br />On 100% Completion</p>",
     locationDescription:
@@ -202,7 +222,7 @@ export const listings: ListingProperty[] = [
     developerSummary:
       "<p>DAMAC Properties has been at the forefront of the Middle East's luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region, including the UAE, Saudi Arabia, Qatar, Jordan, Lebanon, Iraq, Maldives, Canada, the US, as well as the UK.</p>",
     heroImage: "chic-tower-03.webp",
-    galleryImages: ["chic-tower-00.webp", "chic-tower-01.webp", "chic-tower-02.webp"],
+    galleryImages: ["chic-tower-01.webp", "chic-tower-02.webp"],
     floorPlanImage: "CHIC-Tower-floor-plans-pdf.jpg",
     logoImage: "damac-logo-dark.svg",
     logoAlt: "DAMAC PROPERTIES",
@@ -226,6 +246,10 @@ export const listings: ListingProperty[] = [
       "<p>Infinity Pool |<br />Yoga Domes |<br />Underwater Pearl Museum |<br />Shell-shaped pool |<br />Kids Playgrounds |<br />Coffee &amp; juice bar |<br />Promenade Retail |<br />Spa |<br />24/7 Security</p>",
     propertyTypes:
       "<p>Studio, From AED 1,250,000 |<br />1 Bedroom, From AED 1,673,000 | <br />2 Bedrooms, From AED 3,424,000</p>",
+    propertyType: "Apartment",
+    shortName: "Canal Heights",
+    amenitiesShort:
+      "Swimming Pools | Fitness Centres | Spa Areas | Shopping | Play Ground",
     paymentPlan:
       "<p>Downpayment 20 %, On booking |<br />1st Installment 5 %, Within 4 Months of Sale |<br />2nd Installment 5 %, Within 8 Months of Sale |<br />3rd Installment 5 %, Within 12 Months of Sale |<br />4th Installment 5 %, Within 16 Months of Sale |<br />5th Installment 5 %, Within 20 Months of Sale |<br />6th Installment 5 %, Within 24 Months of Sale |<br />7th Installment 5 %, Within 28 Months of Sale |<br />8th Installment 5 %, Within 32 Months of Sale |<br />9th Installment 5 %, Within 36 Months of Sale |<br />10th Installment 5 %, Within 40 Months of Sale |<br />11th Installment 5 %, Within 44 Months of Sale |<br />12th Installment 5 %, Within 48 Months of Sale |<br />Final Installment 20 %, On Completion|</p>",
     locationDescription:
@@ -234,9 +258,8 @@ export const listings: ListingProperty[] = [
       "<p>DAMAC Properties has been at the forefront of the Middle East's luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region.</p>",
     heroImage: "V5.webp",
     galleryImages: [
-      "V5-1-scaled.jpg",
+      "2_Master-Bedroom_20230217-scaled.jpg",
       "Cam-02-04-1.webp",
-      "GF-Lobby-View-3.webp",
     ],
     floorPlanImage: "Floor-plan-Canal-Heights-pdf-1.jpg",
     logoImage: "damac-logo-dark.svg",
