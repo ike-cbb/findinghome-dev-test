@@ -31,20 +31,20 @@ export default function OffPlanPage() {
           <div className="flex flex-col lg:flex-row" style={{ paddingBottom: "30px" }}>
             <div style={{ flexBasis: "60%" }}>
               <p
-                className="text-[#ef4136] font-medium uppercase tracking-[0.02em]"
-                style={{ marginBottom: "5px", fontSize: "18px" }}
+                className="text-[#ef4136] font-medium tracking-[0.02em]"
+                style={{ marginBottom: "5px", fontSize: "18px", fontFamily: "Poppins, sans-serif" }}
               >
                 Why Off-Plan
               </p>
               <h1
                 className="font-normal text-[#010101]"
-                style={{ fontSize: "5.2rem", lineHeight: "1.2", margin: "0.67em 0" }}
+                style={{ fontSize: "5.2rem", lineHeight: "1.2", margin: "0 0 0.67em 0" }}
               >
                 Dubai Off Plan &ndash; an Exciting Investment Opportunities
               </h1>
               <p
                 className="text-[#010101]"
-                style={{ fontSize: "2.4rem", lineHeight: "1.4", marginBottom: "1em" }}
+                style={{ fontSize: "2.4rem", lineHeight: "1.4", marginBottom: "1em", fontFamily: "Poppins, sans-serif" }}
               >
                 Dubai is known around the world for its exciting off-plan developments.
               </p>
@@ -99,13 +99,13 @@ export default function OffPlanPage() {
                     {property.community}
                   </p>
                   <p className="text-[#010101]" style={{ marginBottom: "10px" }}>
-                    Developer: <strong style={{ fontWeight: 700 }}>{property.developerName}</strong>
+                    Developer: <strong style={{ fontWeight: 600 }}>{property.developerName}</strong>
                   </p>
                   <p style={{ marginBottom: "10px" }}>
-                    Property Type: <strong style={{ fontWeight: 700 }}>{property.bedrooms.includes("7") ? "Villa" : "Townhouse"}</strong>
+                    Property Type: <strong style={{ fontWeight: 600 }}>{property.bedrooms.includes("7") ? "Villa" : "Townhouse"}</strong>
                   </p>
                   <p className="text-[#010101]" style={{ fontSize: "14px", marginBottom: "10px" }}>
-                    <strong style={{ fontWeight: 700 }}>Beautiful Marina View</strong>
+                    <strong style={{ fontWeight: 600 }}>Beautiful Marina View</strong>
                     <br />
                     {property.title} is a luxury building located in {property.community}
                   </p>
@@ -147,11 +147,11 @@ export default function OffPlanPage() {
           </div>
 
           {/* See All Button */}
-          <div className="flex justify-center" style={{ paddingTop: "30px" }}>
+          <div className="flex justify-center" style={{ marginTop: "58px" }}>
             <Link
               href="/off-plan/search"
-              className="inline-block bg-[#ef4136] text-[#fefefe] font-medium rounded-[3px] py-4 text-center hover:bg-[#d63629] hover:rounded-[15px] transition-all"
-              style={{ fontSize: "18px", paddingLeft: "40px", paddingRight: "40px" }}
+              className="inline-block bg-[#ef4136] text-[#fefefe] font-medium rounded-[3px] text-center hover:bg-[#d63629] hover:rounded-[15px] transition-all"
+              style={{ fontSize: "18px", padding: "14px 30px", fontFamily: "Poppins, sans-serif", width: "294px" }}
             >
               See all Off-Plan Projects
             </Link>
@@ -184,10 +184,10 @@ export default function OffPlanPage() {
                   />
                 </figure>
               </div>
-              <div className="lg:basis-1/2" style={{ paddingTop: "140px" }}>
+              <div className="lg:basis-1/2" style={{ paddingTop: "190px" }}>
                 <div style={{ paddingRight: "10%" }}>
                   <p
-                    className="text-[#ef4136] font-medium uppercase tracking-[0.02em]"
+                    className="text-[#ef4136] font-medium tracking-[0.02em]"
                     style={{ fontSize: "24px", marginBottom: "5px" }}
                   >
                     Put yourself in the hands of the experts
@@ -225,7 +225,7 @@ export default function OffPlanPage() {
               <div className="lg:basis-1/2 lg:order-1 order-2" style={{ paddingTop: "140px" }}>
                 <div style={{ paddingLeft: "10%" }}>
                   <p
-                    className="text-[#ef4136] font-medium uppercase tracking-[0.02em]"
+                    className="text-[#ef4136] font-medium tracking-[0.02em]"
                     style={{ fontSize: "24px", marginBottom: "5px" }}
                   >
                     Now is the ideal time to invest in Dubai
