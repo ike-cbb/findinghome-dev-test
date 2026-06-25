@@ -16,6 +16,8 @@ export interface ListingProperty {
   amenities: string;
   propertyTypes: string;
   propertyType: string;
+  tagline?: string;
+  shortDescription?: string;
   amenitiesShort: string;
   paymentPlan: string;
   locationDescription: string;
@@ -52,6 +54,9 @@ export const listings: ListingProperty[] = [
     propertyTypes:
       "<p>4 bedroom, from AED 2,470,000 |</p><p>5 bedroom, from AED 3,280,000</p>",
     propertyType: "Townhouse",
+    tagline: "Beautiful Marina View",
+    shortDescription:
+      "Mykonos is a luxury building located in DAMAC Lagoons",
     shortName: "Mykonos",
     amenitiesShort:
       "Swimming Pools | Fitness Centres | Security | Play Ground | Dining",
@@ -97,6 +102,9 @@ export const listings: ListingProperty[] = [
       "<p>Golf course and Trump Golf Clubhouse |<br />Private Swimming Pool |<br />Beach Waves Pool |<br />Sports Facilities |<br />Shopping &amp; Retail</p>",
     propertyTypes: "<p>7 Bedroom Villas</p>",
     propertyType: "Villa",
+    tagline: "Beautiful Marina View",
+    shortDescription:
+      "Beverly Hills Drive is a luxury building located in DAMAC - Hills",
     shortName: "Beverly Hills Drive",
     amenitiesShort:
       "Swimming Pools | Security | Shopping | Community Center | Golf Course",

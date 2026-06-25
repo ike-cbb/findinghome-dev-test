@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { listings } from "@/lib/data";
 
-const featuredProperties = listings.slice(2, 4); // Venice + Verde — different from off-plan page (slice 0,2)
+const featuredProperties = listings.slice(0, 2); // Mykonos + Beverly Hills Drive — matching prod
 
 export const metadata = {
   title: "Contact - Finding Home",
@@ -161,8 +161,8 @@ export default function ContactPage() {
       </section>
 
       {/* Section 3: Featured Off-Plan & Investments */}
-      <section className="py-[4%] px-[5%]">
-        <div className="max-w-[1200px] mx-auto">
+      <section className="py-[4%] px-[31px]">
+        <div>
           <h3
             className="text-[#010101] mb-8"
             style={{
@@ -174,10 +174,10 @@ export default function ContactPage() {
             Featured Off-Plan &amp; Investments
           </h3>
 
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-[35px]">
             {featuredProperties.map((property) => (
               <div key={property.slug} className="flex-[1_1_300px]">
-                <figure className="m-0 cursor-pointer h-[250px] overflow-hidden">
+                <figure className="m-0 cursor-pointer h-[270px] overflow-hidden">
                   <img
                     src={`/assets/listings/${property.heroImage}`}
                     alt=""
@@ -189,10 +189,10 @@ export default function ContactPage() {
 
                 <div
                   className="p-[5%]"
-                  style={{ backgroundColor: "#fde2e1" }}
+                  style={{ backgroundColor: "hsla(2,88%,94%,.5)" }}
                 >
                   <h4
-                    className="text-[#010101] mb-[1.2em]"
+                    className="text-[#010101] mb-[5px]"
                     style={{
                       fontSize: "24px",
                       fontStyle: "normal",
@@ -202,26 +202,37 @@ export default function ContactPage() {
                     {property.title}
                   </h4>
 
-                  <p className="text-[#010101] mb-[1.2em]">
-                    {property.community}, {property.city}
+                  <p className="text-[#010101] mb-[10px]">
+                    {property.shortName}, {property.community}
                   </p>
 
-                  <p className="text-[#010101] mb-[1.2em]">
+                  <p className="text-[#010101] mb-[10px]">
                     Developer:
                     <strong> {property.developerName}</strong>
                   </p>
 
-                  <p className="mb-[1.2em]">
+                  <p className="mb-[10px]">
                     Property Type:
-                    <strong> {property.propertyTypes.replace(/<[^>]*>/g, "")}</strong>
+                    <strong> {property.propertyType}</strong>
                   </p>
 
-                  <p
-                    className="mb-[1.2em]"
-                    style={{ fontSize: "14px" }}
-                  >
-                    {property.aboutDescription.replace(/<[^>]*>/g, "").substring(0, 120)}...
-                  </p>
+                  {property.tagline && (
+                    <p 
+                      className="text-[#010101] font-semibold"
+                      style={{ fontSize: "14px" }}
+                    >
+                      {property.tagline}
+                    </p>
+                  )}
+
+                  {property.shortDescription && (
+                    <p
+                      className="mb-[25px]"
+                      style={{ fontSize: "14px" }}
+                    >
+                      {property.shortDescription}
+                    </p>
+                  )}
 
                   <div className="flex gap-[5px]">
                     <Link
