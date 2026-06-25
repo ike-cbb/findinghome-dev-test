@@ -104,9 +104,9 @@ export default async function PropertyDetailPage({
   return (
     <article>
       {/* Breadcrumbs */}
-      <div className="px-[5%]">
+      <div className="px-[5%]" style={{ paddingTop: "20px", paddingBottom: "20px" }}>
         <div className="max-w-[1200px] mx-auto">
-          <p className="m-0 py-2" style={{ fontSize: "14px" }}>
+          <p className="m-0" style={{ fontSize: "14px" }}>
             <Link href="/off-plan" className="text-[#010101] no-underline">
               Off-Plan{" "}
             </Link>
@@ -143,22 +143,22 @@ export default async function PropertyDetailPage({
           <div className="flex flex-wrap justify-center gap-[10px]">
             <a
               href="#gallery"
-              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] px-10 py-[15px] font-medium no-underline hover:bg-[#f5d0cf] transition-all"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
+              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
+              style={{ fontFamily: "'Poppins', sans-serif", width: "281px" }}
             >
               Gallery
             </a>
             <a
               href="#property-highlights"
-              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] px-10 py-[15px] font-medium no-underline hover:bg-[#f5d0cf] transition-all"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
+              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
+              style={{ fontFamily: "'Poppins', sans-serif", width: "281px" }}
             >
               Highlights
             </a>
             <a
               href="#floorplan"
-              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] px-10 py-[15px] font-medium no-underline hover:bg-[#f5d0cf] transition-all"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
+              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
+              style={{ fontFamily: "'Poppins', sans-serif", width: "281px" }}
             >
               Floorplans
             </a>
