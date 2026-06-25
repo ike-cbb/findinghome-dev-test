@@ -14,7 +14,7 @@ const communities = [
 ];
 
 const triggerBaseStyle = {
-  fontSize: "inherit",
+  fontSize: "32px",
   minHeight: "auto",
   padding: "10px 30px 10px 0",
   backgroundImage: "url(/arrow-down.svg)",
@@ -61,7 +61,7 @@ export default function HomepageListings() {
         <h3
           className="text-[#010101] font-medium mb-10 flex items-baseline flex-wrap"
           style={{
-            fontSize: "clamp(30px, -9.23136px + 1.875rem + 1.202vw, 40px)",
+            fontSize: "32px",
           }}
         >
           <span className="whitespace-nowrap">Finding a new home in&nbsp;</span>
@@ -72,11 +72,11 @@ export default function HomepageListings() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-haspopup="listbox"
-              className="appearance-none outline-none bg-transparent cursor-pointer text-inherit font-medium border-0 border-b border-dashed border-[#ef4136] rounded-none whitespace-nowrap"
+              className="appearance-none outline-none bg-transparent cursor-pointer text-inherit border-0 border-b border-dashed border-[#ef4136] rounded-none whitespace-nowrap"
               style={triggerBaseStyle}
             >
               {selectedOption.label}{" "}
-              <span className="font-normal">({selectedOption.count})</span>
+              <span className="font-normal" style={{ fontSize: "18px" }}>({selectedOption.count})</span>
             </button>
 
             {/* Dropdown menu */}

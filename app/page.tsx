@@ -33,6 +33,7 @@ export default function HomePage() {
             <Link
               href="/off-plan/search"
               className="inline-block w-3/4 !bg-[#ef4136] !text-[#fefefe] text-[16px] leading-[normal] font-medium rounded-[20px] pt-[14px] pb-[14px] px-[30px] text-center hover:!bg-[#d63629] hover:rounded-[15px] transition-all"
+              style={{ fontFamily: "Poppins, sans-serif" }}
             >
               Find Future Home
             </Link>
