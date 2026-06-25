@@ -135,7 +135,7 @@ export default function AboutUsPage() {
               width={1293}
               height={793}
               className="w-full"
-              style={{ height: "320px", objectFit: "cover" }}
+              style={{ height: "500px", objectFit: "cover" }}
             />
           </figure>
 
