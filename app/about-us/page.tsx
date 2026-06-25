@@ -24,23 +24,23 @@ export default function AboutUsPage() {
       </section>
 
       {/* About Intro */}
-      <section className="px-[5%]" style={{ paddingTop: "80px", paddingBottom: "70px" }}>
+      <section className="px-[5%]" style={{ paddingTop: "45px", paddingBottom: "70px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", paddingLeft: 0, paddingRight: 0 }}>
           <div className="flex flex-col lg:flex-row">
             <div style={{ flexBasis: "55%" }}>
               <p
-                className="text-[#ef4136] font-medium uppercase tracking-[0.02em]"
+                className="text-[#ef4136] font-medium tracking-[0.02em]"
                 style={{ marginBottom: "5px", fontSize: "18px" }}
               >
                 Who We Are
               </p>
               <h1
                 className="font-normal text-[#010101]"
-                style={{ fontSize: "5.2rem", margin: "0.67em 0", lineHeight: "1.2" }}
+                style={{ fontSize: "4rem", margin: "0.67em 0", lineHeight: "1.2" }}
               >
                 Buying a home should be a life milestone
               </h1>
-              <p className="text-[#010101]" style={{ fontSize: "2.4rem", marginBottom: "1em" }}>
+              <p className="text-[#010101]" style={{ fontSize: "2rem", marginBottom: "1em" }}>
                 Finding Home. Next to choosing our life partner, buying a home is the biggest decision we
                 will ever make. We understand. That&rsquo;s why we&rsquo;re dedicated to raising the
                 industry bar on how real estate is done, with an experience-led approach that that feeling
@@ -59,7 +59,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Partners */}
-      <section className="w-full relative" style={{ paddingBottom: "0" }}>
+      <section className="w-full relative" style={{ padding: "60px 0 0" }}>
         <span
           className="absolute right-0 top-0 h-full bg-[#e2d5c6] hidden lg:block"
           style={{ width: "50%" }}
@@ -70,7 +70,7 @@ export default function AboutUsPage() {
               className="absolute left-[-30px] bottom-0 bg-[#957f5c] hidden lg:block"
               style={{ width: "30px", height: "80%" }}
             />
-            <h3 className="text-[#957f5c] font-normal" style={{ fontSize: "3rem", marginBottom: "1em" }}>
+            <h3 className="text-[#957f5c] font-normal" style={{ fontSize: "2.6rem", marginBottom: "1em" }}>
               We Only Work with the best
             </h3>
             <div className="flex flex-wrap items-center" style={{ gap: "2rem" }}>
@@ -134,7 +134,8 @@ export default function AboutUsPage() {
               alt=""
               width={1293}
               height={793}
-              className="w-full h-auto"
+              className="w-full"
+              style={{ height: "320px", objectFit: "cover" }}
             />
           </figure>
 
@@ -205,7 +206,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Let's Talk */}
-      <section className="w-full" style={{ padding: "100px 0 60px" }}>
+      <section className="w-full" style={{ padding: "60px 0 0" }}>
         <div className="flex flex-col lg:flex-row lg:items-stretch">
           <div className="lg:basis-[60%]">
             <figure className="m-0 h-full">
@@ -215,12 +216,12 @@ export default function AboutUsPage() {
                 width={2560}
                 height={2099}
                 className="w-full object-cover"
-                style={{ height: "1020px" }}
+                style={{ height: "930px" }}
               />
             </figure>
           </div>
           <div className="lg:basis-[40%]">
-            <div className="relative bg-[#fde2e1]" style={{ padding: "50px 80px" }}>
+            <div className="relative bg-[#fde2e1]" style={{ padding: "50px 60px" }}>
               <span
                 className="absolute left-[-30px] top-0 bg-[#ef4136] hidden lg:block"
                 style={{ width: "30px", height: "42%", zIndex: 1 }}
