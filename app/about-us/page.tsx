@@ -59,21 +59,21 @@ export default function AboutUsPage() {
       </section>
 
       {/* Partners */}
-      <section className="w-full relative" style={{ padding: "60px 0 0" }}>
+      <section className="w-full relative" style={{ padding: "0 31px" }}>
         <span
           className="absolute right-0 top-0 h-full bg-[#e2d5c6] hidden lg:block"
           style={{ width: "50%" }}
         />
-        <div style={{ maxWidth: "1200px", margin: "0 auto", paddingLeft: "8%", paddingRight: "5%" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div className="relative bg-[#e2d5c6]" style={{ padding: "5%" }}>
             <span
               className="absolute left-[-30px] bottom-0 bg-[#957f5c] hidden lg:block"
               style={{ width: "30px", height: "80%" }}
             />
-            <h3 className="text-[#957f5c] font-normal" style={{ fontSize: "2.6rem", marginBottom: "1em" }}>
+            <h3 className="text-[#957f5c] font-normal" style={{ fontSize: "3rem", marginBottom: "40px" }}>
               We Only Work with the best
             </h3>
-            <div className="flex flex-wrap items-center" style={{ gap: "2rem" }}>
+            <div className="flex flex-wrap items-center" style={{ gap: "2rem", marginBottom: "28px" }}>
               <div className="flex items-center flex-shrink-0">
                 <figure className="m-0">
                   <Image
