@@ -31,20 +31,25 @@ export function filterListings(
     // Property type filter
     if (filters.propertyType && filters.propertyType !== "all") {
       const types = property.propertyTypes.toLowerCase();
+      const singleType = (property.propertyType || "").toLowerCase();
+      const types2 = (property.propertyTypes2 || []).map(t => t.toLowerCase());
       const category = filters.propertyType.toLowerCase();
+
+      // Build a combined searchable string from all type fields
+      const allTypes = `${types} ${singleType} ${types2.join(" ")}`;
 
       // Apartment matches: studio, apartment, 1-3 bedrooms (smaller units without villa/townhouse)
       if (category === "apartment") {
-        const isSmallUnit = /\b(?:studio|apartment|1\s*bedroom|2\s*bedroom|3\s*bedroom)\b/i.test(types);
-        const isVillaOrTownhouse = /\b(?:villa|townhouse|4\s*bedroom|5\s*bedroom|6\s*bedroom|7\s*bedroom)\b/i.test(types);
+        const isSmallUnit = /\b(?:studio|apartment|1\s*bedroom|2\s*bedroom|3\s*bedroom)\b/i.test(allTypes);
+        const isVillaOrTownhouse = /\b(?:villa|townhouse|4\s*bedroom|5\s*bedroom|6\s*bedroom|7\s*bedroom)\b/i.test(allTypes);
         if (!isSmallUnit || isVillaOrTownhouse) return false;
       }
       // Villa matches: villa, 4-7 bedrooms
       else if (category === "villa") {
-        if (!/\b(?:villa|4\s*bedroom|5\s*bedroom|6\s*bedroom|7\s*bedroom)\b/i.test(types)) return false;
+        if (!/\b(?:villa|4\s*bedroom|5\s*bedroom|6\s*bedroom|7\s*bedroom)\b/i.test(allTypes)) return false;
       }
-      // Other categories: direct substring match
-      else if (!types.includes(category)) {
+      // Other categories: direct substring match against all type fields
+      else if (!allTypes.includes(category)) {
         return false;
       }
     }
