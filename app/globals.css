@@ -409,10 +409,6 @@ article.homepage-content > section h5 {
 .single_offplan_container h3 {
   line-height: 52px !important;
 }
-.off-plan-single p,
-.single_offplan_container p {
-  line-height: 23.625px !important;
-}
 
 /* Legal pages (privacy-policy, terms-and-condition): article max-width 620px (match live) */
 .ContentWrapper_content__16TR9,
