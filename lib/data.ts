@@ -48,7 +48,7 @@ export const listings: ListingProperty[] = [
     completionYear: "2026",
     developerName: "DAMAC properties",
     aboutDescription:
-      "<p>ISLAND LIVING</p><p>Mykonos brings Cycladic architectural features to life with a modern twist, such as clean lines and earthy bohemian exteriors that complement the community's natural beauty.</p>",
+      "<p>While it is most known for its crazy party scene, Mykonos also offers luxury, history, top-notch cuisine, glistening beaches, and one-of-a-kind tours and activities.</p><p>Mykonos is also a popular island-hopping destination due to its proximity. The beaches offer a distinct ambience that is unlike any other beach you have visited.</p><p>The beach bars keep the party going with nonstop music and dancing, refreshing refreshments and amusing cocktails in open-air events directly on the beach.</p><p>At the same time, you can partake in any water-related activity that strikes your fancy, from thrilling water sports to scuba diving or even cruises to surrounding beaches and adjacent islands.</p>",
     amenities:
       "<p>WindMill Island Park |</p><p>Pool Bar &amp; Floating Garden |</p><p>Luxury Pool Floats |</p><p>Swings, Sunken Seating and Lounge at Paradise Beach |</p><p>The Volcanis Stones Park |</p><p>Beach Club and Cafés |</p><p>Open Air Glow Lounge |</p><p>Honey Bar&nbsp;</p>",
     propertyTypes:

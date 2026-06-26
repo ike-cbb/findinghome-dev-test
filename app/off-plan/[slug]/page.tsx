@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import GallerySlider from "@/components/GallerySlider";
+import ContactSalesModal from "@/components/ContactSalesModal";
+import KeepMeInformedModal from "@/components/KeepMeInformedModal";
 
 export async function generateStaticParams() {
   return listings.map((p) => ({ slug: p.slug }));
@@ -176,12 +178,10 @@ export default async function PropertyDetailPage({
               </p>
             </div>
             <div className="flex-[1_1_33%] flex items-center justify-center">
-              <a
-                href="#enquire"
-                className="inline-block rounded-[3px] bg-[#ef4136] text-[#f1f1f1] text-[18px] px-10 py-[15px] font-medium no-underline hover:bg-[#d63629] transition-colors"
-              >
-                Enquire Now
-              </a>
+              <ContactSalesModal
+                buttonText="Enquire Now"
+                buttonClassName="inline-block rounded-[3px] bg-[#ef4136] text-[#f1f1f1] text-[18px] px-10 py-[15px] font-medium no-underline hover:bg-[#d63629] transition-colors cursor-pointer"
+              />
             </div>
           </div>
 
@@ -394,23 +394,51 @@ export default async function PropertyDetailPage({
       {/* Developer Details */}
       <section id="developer-details" className="px-[5%] pb-[5%]">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap" style={{ gap: "80px" }}>
             <div className="flex-[1_1_300px]">
-              <p
-                className="text-[#ef4136] m-0 mb-2"
-                style={{ fontSize: "24px", fontStyle: "normal", fontWeight: 500 }}
-              >
-                {property.aboutDescription.replace(/<[^>]*>/g, "").split(".")[0]}.
-              </p>
-              <p className="m-0 mb-2" style={{ fontSize: "24px" }}>
-                {property.aboutDescription.replace(/<[^>]*>/g, "").split(".")[1] || ""}
-              </p>
-              <p className="m-0 mb-2" style={{ fontSize: "18px" }}>
-                {property.aboutDescription.replace(/<[^>]*>/g, "").split(".").slice(2).join(".")}
-              </p>
+              {(() => {
+                const matches = [
+                  ...property.aboutDescription.matchAll(/<p>([\s\S]*?)<\/p>/g),
+                ].map((m) => m[1]);
+                const lead = matches[0];
+                const paragraphs = matches.slice(1);
+                return (
+                  <>
+                    {lead && (
+                      <p
+                        className="text-[#ef4136] m-0"
+                        style={{
+                          fontSize: "28px",
+                          fontStyle: "normal",
+                          fontWeight: 500,
+                          fontFamily: "'Poppins', sans-serif",
+                          lineHeight: 1.3,
+                          marginBottom: "30px",
+                        }}
+                      >
+                        {lead}
+                      </p>
+                    )}
+                    {paragraphs.map((p, i) => (
+                      <p
+                        key={i}
+                        className="text-[#010101] m-0"
+                        style={{
+                          fontSize: i === 0 ? "24px" : "18px",
+                          fontFamily: "'Poppins', sans-serif",
+                          lineHeight: 1.5,
+                          marginBottom: i < paragraphs.length - 1 ? "20px" : 0,
+                        }}
+                      >
+                        {p}
+                      </p>
+                    ))}
+                  </>
+                );
+              })()}
             </div>
-            <div className="flex-[1_1_300px]">
-              <div className="mb-4">
+            <div className="flex-[1_1_300px]" style={{ paddingTop: "10px" }}>
+              <div style={{ marginBottom: "25px" }}>
                 <Image
                   src={`/assets/listings/${property.logoImage}`}
                   alt={property.logoAlt}
@@ -419,22 +447,19 @@ export default async function PropertyDetailPage({
                   className="max-h-[30px] w-auto"
                 />
               </div>
-              <p className="mb-4" style={{ fontSize: "18px" }}>
+              <p
+                className="text-[#010101] m-0"
+                style={{ fontSize: "18px", lineHeight: 1.6, marginBottom: "30px" }}
+              >
                 {property.developerSummary.replace(/<[^>]*>/g, "")}
               </p>
               <div className="flex flex-wrap gap-[10px]">
-                <a
-                  href="#enquire"
-                  className="inline-block rounded-[3px] bg-[#ef4136] text-[#f1f1f1] text-[18px] px-10 py-[15px] font-medium no-underline hover:bg-[#d63629] transition-colors"
-                >
-                  Enquire Now
-                </a>
-                <a
-                  href="#keep-informed"
-                  className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] px-10 py-[15px] font-medium no-underline hover:bg-[#f5d0cf] transition-all"
-                >
-                  Keep me informed
-                </a>
+                <ContactSalesModal
+                  buttonText="Enquire Now"
+                  buttonClassName="inline-block rounded-[3px] bg-[#ef4136] text-[#f1f1f1] text-[18px] font-medium no-underline hover:bg-[#d63629] transition-colors cursor-pointer text-center"
+                  buttonStyle={{ padding: "14px 30px", fontFamily: "'Poppins', sans-serif", width: "230px" }}
+                />
+                <KeepMeInformedModal />
               </div>
             </div>
           </div>

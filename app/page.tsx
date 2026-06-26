@@ -3,6 +3,7 @@ import { listings } from "@/lib/data";
 import Link from "next/link";
 import Image from "next/image";
 import HomepageListings from "@/components/HomepageListings";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Home - Finding Home",
@@ -210,168 +211,12 @@ export default function HomePage() {
                 className="absolute left-[-30px] top-0 bg-[#ef4136] hidden lg:block"
                 style={{ width: "30px", height: "42%", zIndex: 1 }}
               />
-              <h3 className="text-center font-normal text-[#010101]" style={{ fontSize: "40px" }}>
-                Let&rsquo;s Talk
-              </h3>
-              <form style={{ marginTop: "40px", marginBottom: "40px"}}>
-                <input
-                  type="text"
-                  placeholder="First Name *"
-                  required
-                  className="w-full outline-none block"
-                  style={{
-                    height: "48px",
-                    borderRadius: "3px",
-                    border: "1px solid #000",
-                    backgroundColor: "#f7f7f7",
-                    padding: "10px 15px",
-                    marginBottom: "18px",
-                    fontSize: "14px",
-                  }}
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name *"
-                  required
-                  className="w-full outline-none block"
-                  style={{
-                    height: "48px",
-                    borderRadius: "3px",
-                    border: "1px solid #000",
-                    backgroundColor: "#f7f7f7",
-                    padding: "10px 15px",
-                    marginBottom: "18px",
-                    fontSize: "14px",
-                  }}
-                />
-                <input
-                  type="text"
-                  placeholder="Company"
-                  className="w-full outline-none block"
-                  style={{
-                    height: "48px",
-                    borderRadius: "3px",
-                    border: "1px solid #000",
-                    backgroundColor: "#f7f7f7",
-                    padding: "10px 15px",
-                    marginBottom: "18px",
-                    fontSize: "14px",
-                  }}
-                />
-                <input
-                  type="email"
-                  placeholder="Email *"
-                  required
-                  className="w-full outline-none block"
-                  style={{
-                    height: "48px",
-                    borderRadius: "3px",
-                    border: "1px solid #000",
-                    backgroundColor: "#f7f7f7",
-                    padding: "10px 15px",
-                    marginBottom: "18px",
-                    fontSize: "14px",
-                  }}
-                />
-                <input
-                  type="tel"
-                  placeholder="050 123 4567"
-                  className="w-full outline-none block"
-                  style={{
-                    height: "48px",
-                    borderRadius: "3px",
-                    border: "1px solid #000",
-                    backgroundColor: "#f7f7f7",
-                    padding: "10px 15px",
-                    marginBottom: "18px",
-                    fontSize: "14px",
-                  }}
-                />
-                <select
-                  className="w-full outline-none block appearance-none"
-                  style={{
-                    height: "48px",
-                    borderRadius: "3px",
-                    border: "1px solid #000",
-                    backgroundColor: "#f7f7f7",
-                    padding: "10px 15px",
-                    marginBottom: "18px",
-                    fontSize: "14px",
-                    backgroundImage: "url(/arrow-down.svg)",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "97% center",
-                  }}
-                >
-                  <option>List my Home</option>
-                  <option>Off-Plan Enquiry</option>
-                  <option>Other</option>
-                </select>
-                <textarea
-                  placeholder="How can we help you?"
-                  rows={4}
-                  className="w-full outline-none block"
-                  style={{
-                    height: "110px",
-                    borderRadius: "3px",
-                    border: "1px solid #000",
-                    backgroundColor: "#f7f7f7",
-                    padding: "10px 15px",
-                    marginBottom: "18px",
-                    fontSize: "14px",
-                    resize: "none",
-                  }}
-                />
-                {/* Privacy checkbox */}
-                <div style={{ marginBottom: "15px" }}>
-                  <input
-                    name="checkbox-i-agree-0"
-                    id="checkbox-i-agree-0"
-                    required
-                    aria-required="true"
-                    type="checkbox"
-                    className="appearance-none rounded-full m-0 p-0 relative"
-                    style={{
-                      width: "28px",
-                      height: "28px",
-                      border: "1px solid #000",
-                      backgroundColor: "#f7f7f7",
-                      top: "8px",
-                      marginRight: "10px",
-                    }}
-                  />
-                  <label
-                    htmlFor="checkbox-i-agree-0"
-                    className="text-[#000] cursor-pointer"
-                    style={{ lineHeight: "1.5" }}
-                  >
-                    I agree to Finding Home{" "}
-                    <a
-                      href="/privacy-policy"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="font-bold text-[#010101] underline"
-                    >
-                      Privacy Policy
-                    </a>
-                  </label>
-                </div>
-                <div className="text-center" style={{ marginTop: "30px" }}>
-                  <button
-                    type="submit"
-                    className="outline-none border-0 cursor-pointer rounded-[3px] hover:rounded-[15px]"
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      backgroundColor: "#ef4136",
-                      color: "#fff",
-                      fontSize: "18px",
-                      padding: "17px 45px",
-                      transition: ".3s",
-                    }}
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              <ContactForm
+                variant="pink"
+                showCheckbox
+                formName="home-contact-form"
+                checkboxId="checkbox-i-agree-0"
+              />
             </div>
           </div>
         </div>
