@@ -689,7 +689,16 @@ section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a[href^="https://wa.me"
   padding: 8px 12px !important;
 }
 
-/* intl-tel-input styling */
+/* Custom checkbox checkmark — hide by default, show SVG when checked */
+.iti__checkbox {
+  background-size: 0 !important;
+  transition: background-size 0.15s ease-in-out;
+}
+.iti__checkbox:checked {
+  background-size: 18px !important;
+}
+
+
 .iti {
   width: 100%;
   height: 48px;
