@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import HomepageListings from "@/components/HomepageListings";
 import ContactForm from "@/components/ContactForm";
+import SplashAnimation from "@/components/SplashAnimation";
 
 export const metadata = {
   title: "Home - Finding Home",
@@ -13,6 +14,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <article>
+      <SplashAnimation />
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-[160px] sm:pt-[250px] pb-[60px] sm:pb-[250px] px-[5%]">
         <div className="absolute inset-0">

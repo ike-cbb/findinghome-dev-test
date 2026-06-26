@@ -567,6 +567,26 @@ section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a[href^="https://wa.me"
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Splash loading animation — home page only */
+.logo_onload {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 10001 !important;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo_onload.logo_faded {
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* Map page */
 .map-page {
   font-family: "Poppins", sans-serif;
