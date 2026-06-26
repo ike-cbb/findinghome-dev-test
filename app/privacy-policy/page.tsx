@@ -108,63 +108,102 @@ const sections = [
   },
 ];
 
+const h1Style = {
+  fontSize: "48px",
+  fontWeight: 300,
+  lineHeight: "72px",
+  color: "#000",
+  marginBottom: "40px",
+  fontFamily: "Poppins, sans-serif",
+} as const;
+
+const h2Style = {
+  fontSize: "36px",
+  fontWeight: 300,
+  lineHeight: "45px",
+  color: "#000",
+  marginTop: "45px",
+  marginBottom: "20px",
+  fontFamily: "Poppins, sans-serif",
+} as const;
+
+const h3Style = {
+  fontSize: "28px",
+  fontWeight: 300,
+  lineHeight: "36.4px",
+  color: "#000",
+  marginTop: "40px",
+  marginBottom: "20px",
+  fontFamily: "Poppins, sans-serif",
+} as const;
+
+const pStyle = {
+  fontSize: "16px",
+  fontWeight: 300,
+  lineHeight: "27px",
+  color: "#000",
+  marginBottom: "19.2px",
+  fontFamily: "Poppins, sans-serif",
+} as const;
+
 export default function PrivacyPolicyPage() {
   return (
-    <article>
-      <section className="py-20 lg:py-32 px-5">
-          <div className="container">
-            <div className="max-w-[1200px] mx-auto">
-              <h1 className="text-4xl lg:text-5xl font-normal text-[#010101] mb-8">
-                Privacy policy
-              </h1>
-              <p className="text-[#010101] text-lg mb-6 leading-relaxed">
-                We respect your privacy and are committed to protecting it through our
-                compliance with this privacy policy (&quot;Policy&quot;). This Policy describes the types
-                of information we may collect from you or that you may provide
-                (&quot;Personal Information&quot;) on the <a href="https://findinghome.ae" className="text-[#ef4136] hover:underline">findinghome.ae</a>{" "}
-                website (&quot;Website&quot; or &quot;Service&quot;) and any of its related products and services
-                (collectively, &quot;Services&quot;), and our practices for collecting, using, maintaining,
-                protecting, and disclosing that Personal Information. It also describes the choices
-                available to you regarding our use of your Personal Information and how you can
-                access and update it.
-              </p>
-              <p className="text-[#010101] text-lg mb-10 leading-relaxed">
-                This Policy is a legally binding agreement between you (&quot;User&quot;, &quot;you&quot; or
-                &quot;your&quot;) and Finding Home Real Estate LLC (doing business as &quot;Finding Home&quot;, &quot;we&quot;,
-                &quot;us&quot; or &quot;our&quot;). If you are entering into this agreement on behalf of a business or
-                other legal entity, you represent that you have the authority to bind such entity
-                to this agreement, in which case the terms &quot;User&quot;, &quot;you&quot; or &quot;your&quot; shall refer
-                to such entity. If you do not have such authority, or if you do not agree with
-                the terms of this agreement, you must not accept this agreement and may not
-                access and use the Website and Services. By accessing and using the Website and
-                Services, you acknowledge that you have read, understood, and agree to be bound
-                by the terms of this Policy. This Policy does not apply to the practices of
-                companies that we do not own or control, or to individuals that we do not employ
-                or manage.
-              </p>
+    <article style={{ maxWidth: "620px", margin: "0 auto" }}>
+      <div>
+        <div style={{ paddingLeft: "5%", paddingRight: "5%", paddingBottom: "10%", paddingTop: "20%" }}>
+          <div style={{ maxWidth: "1200px" }}>
+            <h1 style={h1Style}>
+              Privacy policy
+            </h1>
+            <p style={pStyle}>
+              We respect your privacy and are committed to protecting it through our
+              compliance with this privacy policy (&quot;Policy&quot;). This Policy describes
+              the types of information we may collect from you or that you may provide
+              (&quot;Personal Information&quot;) on the <a href="https://findinghome.ae" className="text-[#ef4136] hover:underline">findinghome.ae</a>{" "}
+              website (&quot;Website&quot; or &quot;Service&quot;) and any of its related products and
+              services (collectively, &quot;Services&quot;), and our practices for collecting,
+              using, maintaining, protecting, and disclosing that Personal Information.
+              It also describes the choices available to you regarding our use of your
+              Personal Information and how you can access and update it.
+            </p>
+            <p style={{ ...pStyle, marginBottom: "40px" }}>
+              This Policy is a legally binding agreement between you (&quot;User&quot;, &quot;you&quot;
+              or &quot;your&quot;) and Finding Home Real Estate LLC (doing business as
+              &quot;Finding Home&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot;). If you are entering into this
+              agreement on behalf of a business or other legal entity, you represent
+              that you have the authority to bind such entity to this agreement, in
+              which case the terms &quot;User&quot;, &quot;you&quot; or &quot;your&quot; shall refer to such
+              entity. If you do not have such authority, or if you do not agree with
+              the terms of this agreement, you must not accept this agreement and may
+              not access and use the Website and Services. By accessing and using the
+              Website and Services, you acknowledge that you have read, understood, and
+              agree to be bound by the terms of this Policy. This Policy does not apply
+              to the practices of companies that we do not own or control, or to
+              individuals that we do not employ or manage.
+            </p>
 
-              <div className="bg-[#f9f9f9] p-6 mb-10 border-l-4 border-[#ef4136]">
-                <h3 className="text-xl font-medium text-[#010101] mb-4">Table of contents</h3>
-                <ol className="list-decimal pl-6 space-y-2">
-                  {sections.map((s) => (
-                    <li key={s.id}>
-                      <a href={`#${s.id}`} className="text-[#ef4136] hover:underline">{s.title}</a>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-
-              <div className="space-y-10">
-                {sections.map((section) => (
-                  <div key={section.id} id={section.id}>
-                    <h2 className="text-xl font-medium text-[#010101] mb-3">{section.title}</h2>
-                    <p className="text-[#010101] text-base leading-relaxed">{section.content}</p>
-                  </div>
+            <div className="wpembed-toc">
+              <h3 style={{ ...h3Style, marginTop: 0 }}>Table of contents</h3>
+              <ol style={{ listStyleType: "decimal", paddingLeft: "20px", fontSize: "16px", lineHeight: "27px", fontWeight: 300, color: "#000", fontFamily: "Poppins, sans-serif" }}>
+                {sections.map((s) => (
+                  <li key={s.id} style={{ marginBottom: "8px" }}>
+                    <a href={`#${s.id}`} className="text-[#ef4136] hover:underline">{s.title}</a>
+                  </li>
                 ))}
-              </div>
+              </ol>
+            </div>
+
+            <div className="space-y-10">
+              {sections.map((section) => (
+                <div key={section.id} id={section.id}>
+                  <h2 style={h2Style}>{section.title}</h2>
+                  <p style={pStyle}>{section.content}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
-      </article>
+        </div>
+      </div>
+    </article>
   );
 }

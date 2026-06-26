@@ -37,7 +37,7 @@ export default function AboutUsPage() {
               </p>
               <h1
                 className="font-normal text-[#010101]"
-                style={{ fontSize: "4rem", margin: "0.67em 0", lineHeight: "1.2" }}
+                style={{ fontSize: "52px", margin: "0 0 30px", lineHeight: "62.4px" }}
               >
                 Buying a home should be a life milestone
               </h1>

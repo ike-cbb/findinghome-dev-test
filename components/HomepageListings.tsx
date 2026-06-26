@@ -61,7 +61,8 @@ export default function HomepageListings() {
         <h3
           className="text-[#010101] font-medium mb-10 flex items-baseline flex-wrap"
           style={{
-            fontSize: "32px",
+            fontSize: "30px",
+            lineHeight: "39px",
           }}
         >
           <span className="whitespace-nowrap">Finding a new home in&nbsp;</span>

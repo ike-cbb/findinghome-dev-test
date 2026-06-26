@@ -29,7 +29,7 @@ export default function HomePage() {
           />
         </div>
         <div className="relative z-10 mx-auto max-w-[1090px] text-center">
-          <h1 className="text-[#fefefe] text-[3rem] sm:text-[4.5rem] font-medium leading-[1.5] sm:leading-[1.5]" style={{ marginBottom: "0.67em" }}>
+            <h1 className="text-[#fefefe] text-[45px] sm:text-[45px] font-medium leading-[1.5] sm:leading-[1.5]" style={{ marginBottom: "40px" }}>
             Others find properties.<br />We find homes.
           </h1>
           <div className="flex justify-center">
@@ -63,7 +63,7 @@ export default function HomePage() {
                 <p className="text-[#ef4136] font-medium mb-0" style={{ fontFamily: "Poppins, sans-serif", fontSize: "18px", fontStyle: "normal" }}>
                   Who We Are
                 </p>
-                <h2 className="font-normal text-[#010101] leading-[1.4]" style={{ fontSize: "4rem", marginBottom: "25px" }}>
+                <h2 className="font-normal text-[#010101] leading-[1.4]" style={{ fontSize: "30px", lineHeight: "36px", marginBottom: "25px" }}>
                   Discover a new way of Finding Home
                 </h2>
                 <p className="text-[#010101]" style={{ fontSize: "18px", marginBottom: "30px" }}>
@@ -98,7 +98,7 @@ export default function HomePage() {
         <div className="max-w-[1400px] mx-auto">
 
           <div className="flex flex-col lg:flex-row" style={{ padding: "0 4%", gap: "2rem" }}>
-            <h2 className="font-normal text-[#010101] leading-[1.1] lg:basis-[64%]" style={{ fontSize: "6rem", fontStyle: "normal", marginBottom: "40px", lineHeight: "1.1" }}>
+            <h2 className="font-normal text-[#010101] leading-[1.1] lg:basis-[64%]" style={{ fontSize: "60px", fontStyle: "normal", marginBottom: "40px", lineHeight: "66px" }}>
               Finding a Home is the Biggest Decision We&rsquo;ll Ever Make
             </h2>
           </div>
@@ -246,7 +246,7 @@ export default function HomePage() {
                 <p className="text-[#957f5c] font-medium uppercase tracking-[0.02em]" style={{ fontSize: "18px", marginBottom: "5px", fontStyle: "normal" }}>
                   Our People
                 </p>
-                <h4 className="text-[#010101] font-normal" style={{ fontSize: "30px", marginBottom: "25px" }}>
+                <h4 className="text-[#010101] font-normal" style={{ fontSize: "26px", lineHeight: "32.5px", marginBottom: "25px" }}>
                   Human-Centred Real Estate
                 </h4>
                 <p className="text-[#010101]" style={{ fontSize: "18px", marginBottom: "24px" }}>
@@ -291,7 +291,7 @@ export default function HomePage() {
                 <p className="text-[#fbb004] font-medium uppercase tracking-[0.02em]" style={{ fontSize: "18px", marginBottom: "5px", fontStyle: "normal" }}>
                   List Your Home
                 </p>
-                <h4 className="text-[#010101] font-normal" style={{ fontSize: "30px", marginBottom: "25px" }}>
+                <h4 className="text-[#010101] font-normal" style={{ fontSize: "26px", lineHeight: "32.5px", marginBottom: "25px" }}>
                   Resources &amp; Guides
                 </h4>
                 <p className="text-[#010101]" style={{ fontSize: "18px", marginBottom: "16px" }}>
@@ -315,7 +315,7 @@ export default function HomePage() {
                 <p className="text-[#00ac44] font-medium uppercase tracking-[0.02em]" style={{ fontSize: "18px", marginBottom: "5px", fontStyle: "normal" }}>
                   Off-Plan &amp; Investment
                 </p>
-                <h4 className="text-[#010101] font-normal" style={{ fontSize: "30px", marginBottom: "25px" }}>
+                <h4 className="text-[#010101] font-normal" style={{ fontSize: "26px", lineHeight: "32.5px", marginBottom: "25px" }}>
                   Find the right investment for you
                 </h4>
                 <p className="text-[#010101]" style={{ fontSize: "18px", marginBottom: "24px" }}>

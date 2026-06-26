@@ -42,32 +42,61 @@ const termsContent = [
   },
 ];
 
+const h1Style = {
+  fontSize: "48px",
+  fontWeight: 300,
+  lineHeight: "72px",
+  color: "#000",
+  marginBottom: "40px",
+  fontFamily: "Poppins, sans-serif",
+} as const;
+
+const h4Style = {
+  fontSize: "18px",
+  fontWeight: 700,
+  lineHeight: "22.5px",
+  color: "#000",
+  fontFamily: "SourceSansPro, sans-serif",
+  marginTop: "24px",
+  marginBottom: "12px",
+} as const;
+
+const pStyle = {
+  fontSize: "16px",
+  fontWeight: 300,
+  lineHeight: "27px",
+  color: "#000",
+  marginBottom: "19.2px",
+  fontFamily: "SourceSansPro, sans-serif",
+} as const;
+
 export default function TermsAndConditionPage() {
   return (
-    <article>
-      <section className="py-20 lg:py-32 px-5">
-          <div className="container">
-            <div className="max-w-[1200px] mx-auto">
-              <h1 className="text-4xl lg:text-5xl font-normal text-[#010101] mb-8">
-                Terms of Use
-              </h1>
-              <p className="text-[#010101] text-lg mb-10 leading-relaxed">
-                Welcome to Finding Home Real Estate LLC&apos;s website (&quot;Website&quot;). If you continue to
-                browse and use this Website, you agree to comply with and be bound by the following
-                terms and conditions of use. These terms, together with our Privacy Policy, govern
-                Finding Home Real Estate LLC&apos;s relationship with you in relation to this Website.
-              </p>
-              <div className="space-y-8">
-                {termsContent.map((section, index) => (
-                  <div key={index}>
-                    <h2 className="text-xl font-medium text-[#010101] mb-3">{section.title}</h2>
-                    <p className="text-[#010101] text-base leading-relaxed">{section.text}</p>
-                  </div>
-                ))}
-              </div>
+    <article style={{ maxWidth: "620px", margin: "0 auto" }}>
+      <div>
+        <div style={{ paddingLeft: "5%", paddingRight: "5%", paddingBottom: "10%", paddingTop: "20%" }}>
+          <div style={{ maxWidth: "1200px" }}>
+            <h1 style={h1Style}>
+              Terms of Use
+            </h1>
+            <p style={{ ...pStyle, marginBottom: "40px" }}>
+              Welcome to Finding Home Real Estate LLC&apos;s website (&quot;Website&quot;). If you
+              continue to browse and use this Website, you agree to comply with and be
+              bound by the following terms and conditions of use. These terms, together
+              with our Privacy Policy, govern Finding Home Real Estate LLC&apos;s
+              relationship with you in relation to this Website.
+            </p>
+            <div>
+              {termsContent.map((section, index) => (
+                <div key={index}>
+                  <h4 style={h4Style}>{section.title}</h4>
+                  <p style={pStyle}>{section.text}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
-      </article>
+        </div>
+      </div>
+    </article>
   );
 }

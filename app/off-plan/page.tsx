@@ -39,7 +39,7 @@ export default function OffPlanPage() {
               </p>
               <h1
                 className="font-normal text-[#010101]"
-                style={{ fontSize: "5.2rem", lineHeight: "1.2", margin: "0 0 0.67em 0" }}
+                style={{ fontSize: "42px", lineHeight: "50.4px", margin: "0 0 0.67em 0" }}
               >
                 Dubai Off Plan &ndash; an Exciting Investment Opportunities
               </h1>
@@ -66,7 +66,7 @@ export default function OffPlanPage() {
       {/* Featured Off-Plan & Investments */}
       <section className="px-[5%]" style={{ paddingTop: "60px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", paddingLeft: 0, paddingRight: 0 }}>
-          <h3 className="text-[#010101] font-medium" style={{ fontSize: "4rem", marginBottom: "40px" }}>
+          <h3 className="text-[#010101] font-medium" style={{ fontSize: "4rem", marginBottom: "40px", lineHeight: "52px" }}>
             Featured Off-Plan &amp; Investments
           </h3>
 
@@ -280,7 +280,7 @@ export default function OffPlanPage() {
         <div style={{ maxWidth: "800px", margin: "0 auto", paddingLeft: 0, paddingRight: 0 }}>
           <h2
             className="text-center font-normal text-[#010101]"
-            style={{ fontSize: "40px", marginBottom: "0.83em" }}
+            style={{ fontSize: "40px", marginBottom: "0.83em", lineHeight: "50px" }}
           >
             Why invest in Dubai&rsquo;s property market?
           </h2>

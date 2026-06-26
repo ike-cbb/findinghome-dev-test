@@ -178,7 +178,7 @@ export default async function PropertyDetailPage({
         <div className="relative z-10">
           <h1
             className="text-[#f1f1f1] mb-8"
-            style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400 }}
+            style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400, lineHeight: "60px" }}
           >
             {property.title}
           </h1>
@@ -574,7 +574,7 @@ export default async function PropertyDetailPage({
             <div className="flex-1 md:pl-[50px]" style={{ minWidth: 0 }}>
               <h2
                 className="m-0 mb-1"
-                style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400 }}
+                style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400, lineHeight: "50px" }}
               >
                 Payment Plan
               </h2>

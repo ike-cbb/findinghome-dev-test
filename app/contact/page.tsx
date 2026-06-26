@@ -56,6 +56,7 @@ export default function ContactPage() {
               <h2
                 id="agents"
                 className="text-[#010101] text-[40px] font-normal my-8"
+                style={{ lineHeight: "50px" }}
               >
                 Meet the Team
               </h2>
@@ -161,6 +162,7 @@ export default function ContactPage() {
               fontSize: "40px",
               fontStyle: "normal",
               fontWeight: 500,
+              lineHeight: "52px",
             }}
           >
             Featured Off-Plan &amp; Investments
