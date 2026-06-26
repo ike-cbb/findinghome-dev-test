@@ -558,3 +558,11 @@ section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a[href^="https://wa.me"
 .group:hover .modal-close-icon::after {
   transform: rotate(0deg);
 }
+
+/* Off-plan single page: Poppins everywhere except the developer summary */
+.off-plan-single {
+  font-family: "Poppins", sans-serif;
+}
+.off-plan-single .developer-summary {
+  font-family: Arial, Helvetica, sans-serif;
+}

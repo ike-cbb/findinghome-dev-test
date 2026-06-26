@@ -1,0 +1,41 @@
+{
+  "slug": "chic-tower",
+  "offPlanUnitId": 262,
+  "isFeatured": true,
+  "offPlanPropertiesTitle": "Chic Tower",
+  "offplanDescription": "<p>Chic Tower is a top-class luxury destination by Damac Properties that features studio, 1 and 2-bedroom apartments located at Business Bay, Dubai. This unique tower comes with bath zones including salt and mud baths beside its 180-meter-long lazy river.</p>",
+  "developerName": "DAMAC PROPERTIES",
+  "developerSummary": "<p>DAMAC Properties has been at the forefront of the Middle East’s luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region, including the UAE, Saudi Arabia, Qatar, Jordan, Lebanon, Iraq, Maldives, Canada, the US, as well as the UK.</p>",
+  "propertyExplainer": "<p>Welcome to Chic Tower, branded by de GRISOGONO</p>\r\n<p>A newly launched residential project by DAMAC Properties, called Chic Tower by de GRISOGONO, offers a holistic lifestyle experience in Business Bay. A collection of exclusive studios, as well as residences with 1-2 bedrooms are available for purchase.</p>\r\n<p>Properties in the elite complex are presented by studios and 1-2 bedroom luxury apartments. Luxury level residences are located from the 7th to 32nd levels, while super luxury level residences are situated across the 34th to 41st floors. Living areas of studios and apartments with 1-2 bedrooms range from 413 sq. ft to 1,679 sq. ft.</p>",
+  "propertyTypes": "<p>Studio, From AED 823,000 |<br />1 Bedroom, From AED 1,503,000 | <br />2 Bedrooms, From AED 2,739,000</p>",
+  "propertyTypes2": [
+    "apartment"
+  ],
+  "propertyHighlights2": [
+    "swimmingPools",
+    "fitnessCentres",
+    "spaAreas",
+    "shopping",
+    "playGround"
+  ],
+  "amenities": "<p>Outdoor gym |<br />Infinity Pool |<br />Lazy river |<br />Juice Bar |<br />Party Zone |</p>\r\n<p>Spa</p>",
+  "locationDescription": "<p>The perfect location.</p>\r\n<p>Chic Tower by de GRISOGONO is a new residential complex from one of the leading developers in the emirate of Dubai – DAMAC Properties. At the moment the residential project is currently under construction with the anticipated date of completion set to be April 2026.</p>",
+  "locationList": "<p>7 minutes, Dubai Mall |<br />7 minutes, Burj khalifa |<br />25 minutes, Dubai International Airport</p>",
+  "paymentPlanIntro": "80 % During contruction 20 % On completion",
+  "paymentPlanDetails": "<p>Down Payment — 20%,<br />On booking |<br /><br />1st to 4th Installment — 20%,<br />Within 12 months (5% Quarterly) from booking date |<br /><br />5th to 13th Installment — 20%,<br />Within 39 months (4% Quarterly) from booking date |</p>\r\n<p>14th Installment — 1%,<br />On 70% construction completion |</p>\r\n<p>15th Installment — 1%,<br />On 80% construction completion |</p>\r\n<p>16th Installment— 1%,<br />On 90% construction completion |</p>\r\n<p>17th Installment — 1%,<br />On 95% construction completion |</p>\r\n<p>Final Installment — 20%,<br />On 100% Completion</p>",
+  "completionQuarter": "Q4",
+  "completionYear": "2026",
+  "permitNumber": "0527579984",
+  "googleMapLatLang": "25.183516322735233, 55.26132320747118",
+  "developerLogoUrl": "/assets/listings/damac-logo-dark.svg",
+  "floorPlanUrl": "/assets/listings/CHIC-Tower-floor-plans.pdf",
+  "paymentPlanUrl": "/assets/listings/11.10.22-CHIC-TOWER-PAYMENT-PLAN-.pdf",
+  "videoUrl": "/assets/listings/Chic-Film-16X9-En.mp4",
+  "videoCoverUrl": "/assets/listings/RENDERS17-scaled.jpg",
+  "featuredImage": "/assets/listings/RENDERS23-min-scaled.jpg",
+  "galleryImages": [
+    "/assets/listings/chic-tower-03.webp",
+    "/assets/listings/chic-tower-01.webp",
+    "/assets/listings/chic-tower-02.webp"
+  ]
+}

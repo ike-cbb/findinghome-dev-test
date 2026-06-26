@@ -1,0 +1,41 @@
+{
+  "slug": "damac-canal-heights",
+  "offPlanUnitId": 246,
+  "isFeatured": true,
+  "offPlanPropertiesTitle": "DAMAC Canal Heights",
+  "offplanDescription": "<p>DAMAC Canal Heights is in the spirited financial district of business bay, surrounded by other stylish high rises, trendy apartment buildings and popular hotels.</p>",
+  "developerName": "DAMAC PROPERTIES",
+  "developerSummary": "<p>DAMAC Properties has been at the forefront of the Middle East’s luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region, including the UAE, Saudi Arabia, Qatar, Jordan, Lebanon, Iraq, Maldives, Canada, the US, as well as the UK.</p>",
+  "propertyExplainer": "<p>Welcome to Canal Heights, branded by de GRISOGONO</p>\r\n<p>A luxurious waterfront living experience that embodies the beauty and perfection of nature’s most wondrous creation…. the blue pearl.</p>\r\n<p>Canal Heights brings natural elements to life with a diverse range of amenities that promise year-round serenity and well-being. This stunning property encompasses a true gem of vibrant living, with one-of-a-kind multipurpose domes that serve as wellness cocoons, intimate dining experiences, and a perfect space for private parties and gatherings.</p>\r\n<p>As a result of outstanding water features such as infinity lap pools and shell-shaped pools, this property offers a multifaceted lifestyle experience.</p>",
+  "propertyTypes": "<p>Studio, From AED 1,250,000 |<br />1 Bedroom, From AED 1,670,000 | <br />2 Bedrooms, From AED 3,420,000<br /><br /></p>",
+  "propertyTypes2": [
+    "apartment"
+  ],
+  "propertyHighlights2": [
+    "swimmingPools",
+    "fitnessCentres",
+    "spaAreas",
+    "shopping",
+    "playGround"
+  ],
+  "amenities": "<p>Infinity Pool |<br />Yoga Domes |<br />Underwater Pearl Museum |<br />Shell – Shaped Swimming pool |<br />Kids Playgrounds |<br />Coffee and juice bar |<br />Promenade Retail |</p>\r\n<p>Spa|</p>\r\n<p>24/7 Security</p>",
+  "locationDescription": "<p class=\"has-text-color\">The perfect location.</p>\r\n<p class=\"has-text-color\">Situated away from the hustle and bustle of the city, Sobha Hartland II is still located close enough to enjoy all the attractions that Dubai has to offer.</p>",
+  "locationList": "<p>7 minutes, Dubai Mall |<br />7 minutes, Burj khalifa |<br />25 minutes, Dubai International Airport </p>",
+  "paymentPlanIntro": "80% During completion, 20% On completion",
+  "paymentPlanDetails": "<p>Down Payment — 20%,<br />On booking |<br />5th Instalment — 4%,<br />15 Months from Sale Date |<br />1st Instalment — 5%,<br />3 Months from Sale Date |<br />6th Instalment — 4%, <br />18 Months from Sale Date |<br />2nd Instalment — 5%, <br />6 Months from Sale Date |<br />7th Instalment — 4%, <br />21 Months from Sale Date |<br />3rd Instalment — 5%, <br />9 Months from Sale Date |<br />8th Instalment — 4%, <br />24 Months from Sale Date |<br />4th Instalment — 5%, <br />12 Months from Sale Date |</p>\r\n<p>More installments in the file below</p>\r\n<p>9th Instalment — 3%,<br />27 Months from Sale Date |<br />10th Instalment — 3%,<br />30 Months from Sale Date |<br />11th Instalment — 3%,<br />33 Months from Sale Date |<br />12th Instalment — 3%,<br />36 Months from Sale Date |<br />13th Instalment — 3%,<br />39 Months from Sale Date |<br />14th Instalment — 3%,<br />42 Months from Sale Date |<br />15th Instalment — 3%,<br />45 Months from Sale Date |<br />16th Instalment — 3%,<br />48 Months from Sale Date |<br />17th Instalment — 20%,<br />On Completion</p>",
+  "completionQuarter": "Q4",
+  "completionYear": "2026",
+  "permitNumber": "0197473170",
+  "googleMapLatLang": "25.183812973903013, 55.27903169106043",
+  "developerLogoUrl": "/assets/listings/damac-logo-dark.svg",
+  "floorPlanUrl": "/assets/listings/Floor-plan-Canal-Heights.pdf",
+  "paymentPlanUrl": "/assets/listings/PAYMENT-PLAN-DAMAC-Canal-Heights.pdf",
+  "videoUrl": "/assets/listings/CANAL-HEIGHTS-LAUNCH.mp4",
+  "videoCoverUrl": "/assets/listings/video-cover.webp",
+  "featuredImage": "/assets/listings/DAMAC-Canal-Heights_-scaled.webp",
+  "galleryImages": [
+    "/assets/listings/V5.webp",
+    "/assets/listings/2_Master-Bedroom_20230217-scaled.jpg",
+    "/assets/listings/Cam-02-04-1.webp"
+  ]
+}

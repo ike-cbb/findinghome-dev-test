@@ -1,10 +1,50 @@
-import { listings, formatPrice } from "@/lib/data";
+import { listings, type ListingProperty } from "@/lib/data";
+import beverlyHillsPage from "@/lib/beverly-hills-page.json";
+import canalHeightsPage from "@/lib/canal-heights-page.json";
+import chicTowerPage from "@/lib/chic-tower-page.json";
+import mykonosPage from "@/lib/mykonos-page.json";
+import venicePage from "@/lib/venice-page.json";
+import verdeBySobhaPage from "@/lib/verde-by-sobha-page.json";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import GallerySlider from "@/components/GallerySlider";
 import ContactSalesModal from "@/components/ContactSalesModal";
 import KeepMeInformedModal from "@/components/KeepMeInformedModal";
+
+const pageContentOverrides: Record<string, Partial<ListingProperty>> = {
+  [mykonosPage.slug]: mykonosPage as Partial<ListingProperty>,
+  [beverlyHillsPage.slug]: beverlyHillsPage as Partial<ListingProperty>,
+  [venicePage.slug]: venicePage as Partial<ListingProperty>,
+  [verdeBySobhaPage.slug]: verdeBySobhaPage as Partial<ListingProperty>,
+  [chicTowerPage.slug]: chicTowerPage as Partial<ListingProperty>,
+  [canalHeightsPage.slug]: canalHeightsPage as Partial<ListingProperty>,
+};
+
+function stripListingsPrefix(value: string) {
+  return value.startsWith("/assets/listings/")
+    ? value.replace("/assets/listings/", "")
+    : value;
+}
+
+function getProperty(slug: string) {
+  const base = listings.find((p) => p.slug === slug);
+  if (!base) return undefined;
+  const override = pageContentOverrides[slug];
+  if (!override) return base;
+
+  const normalized = { ...base };
+  for (const [key, value] of Object.entries(override)) {
+    if (Array.isArray(value)) {
+      (normalized as Record<string, unknown>)[key] = value.map((v) =>
+        typeof v === "string" ? stripListingsPrefix(v) : v,
+      );
+    } else {
+      (normalized as Record<string, unknown>)[key] = value;
+    }
+  }
+  return normalized;
+}
 
 export async function generateStaticParams() {
   return listings.map((p) => ({ slug: p.slug }));
@@ -16,7 +56,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const property = listings.find((p) => p.slug === slug);
+  const property = getProperty(slug);
   if (!property) return { title: "Not Found" };
   return {
     title: `${property.title} - Finding Home`,
@@ -30,7 +70,7 @@ export default async function PropertyDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const property = listings.find((p) => p.slug === slug);
+  const property = getProperty(slug);
   if (!property) notFound();
 
   const amenitiesList = property.amenities
@@ -104,7 +144,7 @@ export default async function PropertyDetailPage({
   }
 
   return (
-    <article>
+    <article className="off-plan-single">
       {/* Breadcrumbs */}
       <div className="px-[5%]" style={{ paddingTop: "20px", paddingBottom: "20px" }}>
         <div className="max-w-[1200px] mx-auto">
@@ -171,7 +211,7 @@ export default async function PropertyDetailPage({
       {/* Intro + Video */}
       <section className="px-[5%] py-[5%]">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex gap-5 mb-10">
+          <div className="flex gap-5 mb-[60px]">
             <div className="flex-[1_1_66%]">
               <p className="text-[#010101] leading-[1.4]" style={{ fontSize: "28px" }}>
                 {property.aboutDescription.replace(/<[^>]*>/g, "")}
@@ -211,22 +251,50 @@ export default async function PropertyDetailPage({
               Property Highlights
             </p>
             <div className="flex flex-1 flex-wrap" style={{ gap: "15px" }}>
-              {[
-                { label: "Swimming Pools", icon: "/assets/images/swimming-pool.svg" },
-                { label: "Fitness Centres", icon: "/assets/images/barbell.svg" },
-                { label: "Security", icon: "/assets/images/cctv.svg" },
-                { label: "Play Ground", icon: "/assets/images/ico-PlayGround.svg" },
-                { label: "Dining", icon: "/assets/images/ico-Dining.svg" },
-              ].map((item) => (
-                <div key={item.label} className="text-center" style={{ width: "116px" }}>
-                  <div className="mx-auto mb-1 flex justify-center items-center">
-                    <img src={item.icon} alt={item.label} width={116} height={116} />
+              {(
+                property.propertyHighlights2 || [
+                  "swimmingPools",
+                  "fitnessCentres",
+                  "security",
+                  "playGround",
+                  "dining",
+                ]
+              ).map((key) => {
+                const icons: Record<string, string> = {
+                  swimmingPools: "/assets/images/swimming-pool.svg",
+                  fitnessCentres: "/assets/images/barbell.svg",
+                  security: "/assets/images/cctv.svg",
+                  spaAreas: "/assets/images/icon-spa.svg",
+                  shopping: "/assets/images/icon-shopping.svg",
+                  communityCenter: "/assets/images/ico-Community.svg",
+                  dining: "/assets/images/ico-Dining.svg",
+                  playGround: "/assets/images/ico-PlayGround.svg",
+                  garden: "/assets/images/ico-Garden.svg",
+                  golfCourse: "/assets/images/ico-Golf.svg",
+                };
+                const label = key
+                  .replace(/([A-Z])/g, " $1")
+                  .replace(/^./, (c) => c.toUpperCase())
+                  .trim();
+                return (
+                  <div key={key} className="text-center" style={{ width: "116px" }}>
+                    <div className="mx-auto mb-1 flex justify-center items-center">
+                      <img
+                        src={icons[key] || "/assets/images/swimming-pool.svg"}
+                        alt={label}
+                        width={116}
+                        height={116}
+                      />
+                    </div>
+                    <p
+                      className="m-0"
+                      style={{ fontSize: "14px", color: "#010101", fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {label}
+                    </p>
                   </div>
-                  <p className="m-0" style={{ fontSize: "14px", color: "#010101", fontFamily: "'Poppins', sans-serif" }}>
-                    {item.label}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -363,9 +431,9 @@ export default async function PropertyDetailPage({
               Developer Details
             </a>
             <a
-              href={property.floorPlanImage ? `/assets/listings/${property.floorPlanImage}` : "#floorplan"}
-              target={property.floorPlanImage ? "_blank" : undefined}
-              rel={property.floorPlanImage ? "noopener noreferrer" : undefined}
+              href={property.floorPlanUrl || (property.floorPlanImage ? `/assets/listings/${property.floorPlanImage}` : "#floorplan")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
               style={{ minWidth: "200px", fontFamily: "'Poppins', sans-serif", padding: "14px 30px", width: "293px" }}
             >
@@ -394,11 +462,12 @@ export default async function PropertyDetailPage({
       {/* Developer Details */}
       <section id="developer-details" className="px-[5%] pb-[5%]">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex flex-wrap" style={{ gap: "80px" }}>
+          <div className="flex flex-wrap items-center" style={{ gap: "80px" }}>
             <div className="flex-[1_1_300px]">
               {(() => {
+                const source = property.propertyExplainer || property.aboutDescription;
                 const matches = [
-                  ...property.aboutDescription.matchAll(/<p>([\s\S]*?)<\/p>/g),
+                  ...source.matchAll(/<p>([\s\S]*?)<\/p>/g),
                 ].map((m) => m[1]);
                 const lead = matches[0];
                 const paragraphs = matches.slice(1);
@@ -448,7 +517,7 @@ export default async function PropertyDetailPage({
                 />
               </div>
               <p
-                className="text-[#010101] m-0"
+                className="text-[#010101] m-0 developer-summary"
                 style={{ fontSize: "18px", lineHeight: 1.6, marginBottom: "30px" }}
               >
                 {property.developerSummary.replace(/<[^>]*>/g, "")}
@@ -570,7 +639,7 @@ export default async function PropertyDetailPage({
                           {cell.isDownload ? (
                             <strong style={{ fontWeight: 500 }}>
                               <a
-                                href="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/03/paymentplan.pdf"
+                                href={property.paymentPlanUrl || "/assets/listings/LAGOONS-Mykonos-Paymentplan.pdf"}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
@@ -611,15 +680,53 @@ export default async function PropertyDetailPage({
                           borderBottom: "none",
                         }}
                       >
-                        {renderCell(row.left, 0)}
-                        {renderCell(row.right, 1)}
+                        {isDownloadRow ? (
+                          <td
+                            colSpan={2}
+                            style={{
+                              border: "none",
+                              borderBottom: "1px solid #fde2e1",
+                              padding: "15px",
+                              width: "100%",
+                              fontSize: "16px",
+                              textAlign: "center",
+                            }}
+                          >
+                            {row.left.isDownload ? (
+                              <strong style={{ fontWeight: 500 }}>
+                                <a
+                                  href={property.paymentPlanUrl || "/assets/listings/LAGOONS-Mykonos-Paymentplan.pdf"}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{
+                                    color: "#ef4136",
+                                    backgroundColor: "#fde2e1",
+                                    display: "inline-block",
+                                    padding: "14px 30px",
+                                    borderRadius: "3px",
+                                    textDecoration: "none",
+                                    transition: ".3s",
+                                    width: "100%",
+                                  }}
+                                >
+                                  Download Payment Plan
+                                </a>
+                              </strong>
+                            ) : null}
+                          </td>
+                        ) : (
+                          <>
+                            {renderCell(row.left, 0)}
+                            {renderCell(row.right, 1)}
+                          </>
+                        )}
                       </tr>
                     );
                   })}
                 </tbody>
               </table>
               <p className="text-[#767676] m-0 mt-5" style={{ fontStyle: "normal", fontWeight: 500 }}>
-                Permit#: 0705888731
+                Permit#: {property.permitNumber || "0705888731"}
               </p>
             </div>
           </div>

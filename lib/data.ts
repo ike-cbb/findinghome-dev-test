@@ -13,24 +13,32 @@ export interface ListingProperty {
   completionYear: string;
   developerName: string;
   aboutDescription: string;
+  propertyExplainer?: string;
   amenities: string;
   propertyTypes: string;
+  propertyTypes2?: string[];
+  propertyHighlights2?: string[];
   propertyType: string;
   tagline?: string;
   shortDescription?: string;
   amenitiesShort: string;
   paymentPlan: string;
+  paymentPlanIntro?: string;
   locationDescription: string;
   developerSummary: string;
   heroImage: string;
   galleryImages: string[];
   floorPlanImage: string;
+  floorPlanUrl?: string;
+  paymentPlanUrl?: string;
   logoImage: string;
   logoAlt: string;
   videoUrl?: string;
   videoCoverUrl?: string;
   googleMapLatLang?: string;
   locationList?: string;
+  permitNumber?: string;
+  isFeatured?: boolean;
 }
 
 export const listings: ListingProperty[] = [
@@ -48,11 +56,15 @@ export const listings: ListingProperty[] = [
     completionYear: "2026",
     developerName: "DAMAC properties",
     aboutDescription:
-      "<p>While it is most known for its crazy party scene, Mykonos also offers luxury, history, top-notch cuisine, glistening beaches, and one-of-a-kind tours and activities.</p><p>Mykonos is also a popular island-hopping destination due to its proximity. The beaches offer a distinct ambience that is unlike any other beach you have visited.</p><p>The beach bars keep the party going with nonstop music and dancing, refreshing refreshments and amusing cocktails in open-air events directly on the beach.</p><p>At the same time, you can partake in any water-related activity that strikes your fancy, from thrilling water sports to scuba diving or even cruises to surrounding beaches and adjacent islands.</p>",
+      "<p>ISLAND LIVING</p><p>Mykonos brings Cycladic architectural features to life with a modern twist, such as clean lines and earthy bohemian exteriors that complement the community's natural beauty.</p>",
+    propertyExplainer:
+      "<p>While it is most known for its crazy party scene, Mykonos also offers luxury, history, top-notch cuisine, glistening beaches, and one-of-a-kind tours and activities.&nbsp;</p><p>Mykonos is also a popular island-hopping destination due to its proximity. The beaches offer a distinct ambience that is unlike any other beach you have visited.</p><p>The beach bars keep the party going with nonstop music and dancing, refreshing refreshments and amusing cocktails in open-air events directly on the beach.</p><p>At the same time, you can partake in any water-related activity that strikes your fancy, from thrilling water sports to scuba diving or even cruises to surrounding beaches and adjacent islands.</p>",
     amenities:
       "<p>WindMill Island Park |</p><p>Pool Bar &amp; Floating Garden |</p><p>Luxury Pool Floats |</p><p>Swings, Sunken Seating and Lounge at Paradise Beach |</p><p>The Volcanis Stones Park |</p><p>Beach Club and Cafés |</p><p>Open Air Glow Lounge |</p><p>Honey Bar&nbsp;</p>",
     propertyTypes:
       "<p>4 bedroom, from AED 2,470,000 |</p><p>5 bedroom, from AED 3,280,000</p>",
+    propertyTypes2: ["townhouse"],
+    propertyHighlights2: ["swimmingPools", "fitnessCentres", "security", "playGround", "dining"],
     propertyType: "Townhouse",
     tagline: "Beautiful Marina View",
     shortDescription:
@@ -62,26 +74,30 @@ export const listings: ListingProperty[] = [
       "Swimming Pools | Fitness Centres | Security | Play Ground | Dining",
     paymentPlan:
       "<p>Downpayment 20 %, On booking |<br />1st Installment 5 %, Within 3 Months of Sale |<br />2nd Installment 5 %, Within 6 Months of Sale |<br />3rd Installment 5 %, Within 9 Months of Sale |<br />4th Installment 5 %, Within 12 Months of Sale |<br />5th Installment 5 %, Within 15 Months of Sale |<br />6th Installment 5 %, Within 18 Months of Sale |<br />7th Installment 5 %, Within 21 Months of Sale |<br />8th Installment 5 %, Within 24 Months of Sale |<br />9th Installment 5 %, Within 27 Months of Sale |<br />10th Installment 5 %, Within 30 Months of Sale |<br />11th Installment 5 %, Within 33 Months of Sale |<br />12th Installment 2 %, On 70 % Completion|<br />13th Installment 2 %, On 80 % Completion|<br />14th Installment 1 %, On 90 % Completion|<br />15th Installment 20 %, On Completion|</p>",
+    paymentPlanIntro: "80% During construction, 20% On completion",
     locationDescription:
       "<p>DAMAC Hills, Remraam, and Tilal Al Ghaf surround DAMAC Lagoons. Residents will be able to travel to any part of Dubai in a short amount of time thanks to the area's excellent road connections.</p><p>Thus, Downtown Dubai, Business Bay, and Dubai Marina are all within 30 minutes of the community, while Deira and Dubai International Airport are a 40-minute drive away.</p>",
     developerSummary:
-      "<p>DAMAC Properties has been at the forefront of the Middle East's luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region, including the UAE, Saudi Arabia, Qatar, Jordan, Lebanon, Iraq, Maldives, Canada, the US, as well as the UK.</p>",
+      "<p>DAMAC Properties has been at the forefront of the Middle East’s luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region, including the UAE, Saudi Arabia, Qatar, Jordan, Lebanon, Iraq, Maldives, Canada, the US, as well as the UK.</p>",
     heroImage: "TW_BACK.jpg",
     galleryImages: [
+      "TW_BACK.jpg",
       "MYKONOS_Windmill.jpg",
       "MYKONOS_Lagoon_2.jpg",
       "MYKONOS_Lagoon.jpg",
-      "INTERIOR_1.jpg",
     ],
     floorPlanImage: "LAGOONS-Mykonos-Floor-plans-pdf.jpg",
+    floorPlanUrl: "/assets/listings/LAGOONS-Mykonos-Floor-plans.pdf",
+    paymentPlanUrl: "/assets/listings/LAGOONS-Mykonos-Paymentplan.pdf",
     logoImage: "damac-logo-dark.svg",
     logoAlt: "DAMAC properties",
-    videoUrl:
-      "https://findinghomeprd.wpengine.com/wp-content/uploads/2023/04/Mykonos-Launch-En.mp4",
+    videoUrl: "/assets/listings/Mykonos-Launch-En.mp4",
     videoCoverUrl: "/assets/listings/MYKONOS_Lagoon.jpg",
     googleMapLatLang: "25.017198578252458, 55.2437543825842",
     locationList:
       "30 minutes, Dubai Marina|30 minutes, Business bay|40 minutes, Dubai international airport|30 minutes, The Palm Jumeirah|25 minutes, The Mall of the Emirates|20 minutes, Dubai Miracle Garden",
+    permitNumber: "0705888731",
+    isFeatured: true,
   },
   {
     slug: "damac-hills-trump-estates-beverly-hills-drive",

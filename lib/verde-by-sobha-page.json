@@ -1,0 +1,41 @@
+{
+  "slug": "verde-by-sobha",
+  "offPlanUnitId": 380,
+  "isFeatured": true,
+  "offPlanPropertiesTitle": "Verde By Sobha",
+  "offplanDescription": "<p>Embrace a new kind of living in one of Dubai's most coveted districts-JLT.</p>\r\n<p>SOBHA Verde offers stunning views of the green meadows and the golf course. The uber-luxury homes are beautifully designed with world-class amenities. The tower consists of 1-3.5-bedroom apartments ranging from.</p>",
+  "developerName": "Sobha Realty",
+  "developerSummary": "<p>SOBHA Realty redefines the concept of urban luxury living</p>\r\n<p>with a repertoire of real estate projects across Dubai. With a razor-sharp focus on quality and innovation, it has created a plethora of iconic spaces such as extravagant palaces, ornate mosques, cutting-edge campuses and ultra-luxurious communities with grand villas and apartments. Every detail in SOBHA ushers in limitless possibilities of fine living.</p>",
+  "propertyExplainer": "<p>Verde by Sobha</p>\r\n<p>features a range of luxurious 1,2 and 3-bedroom apartments. All apartments will come with their own balcony and have a modern design with high floor-to-ceiling windows. Verde is built with high-quality materials as Sobha is well-known for.  </p>\r\n<p>The apartments provide residents with world-class amenities. Including a fitness centre, a temperature-controlled swimming pool, a children’s play area,  green garden. Verde also has a beautifully designed lobby with 24-hour security and concierge services.</p>",
+  "propertyTypes": "<p>1 bedroom |</p>\r\n<p>2 Bedrooms |</p>\r\n<p>3 bedrooms</p>",
+  "propertyTypes2": [
+    "apartment"
+  ],
+  "propertyHighlights2": [
+    "fitnessCentres",
+    "shopping",
+    "garden",
+    "playGround",
+    "dining"
+  ],
+  "amenities": "<p>Retail Outlets |</p>\r\n<p>Gym |</p>\r\n<p>Restaurants |</p>\r\n<p>Swimming Pool |</p>\r\n<p>Children Play Area |</p>\r\n<p>BBQ Area |</p>\r\n<p>Lush Green Parks |</p>",
+  "locationDescription": "<p>Verde by Sobha is located in Jumeirah Lakes Towers (JLT). one of Dubai’s most popular residential and commercial areas. Just a few minutes away are Dubai Marina and Dubai Marina Mall. Verde by Sobha is situated close to Dubai Metro and Sheikh Zayed Road.</p>",
+  "locationList": "<p> 7 minutes, Dubai Harbour |</p>\r\n<p> 5 minutes, Dubai Marina |</p>\r\n<p> 7 minutes, JBR Beach |</p>\r\n<p> 7 minutes , Marina |</p>\r\n<p> 8 minutes, Palm Jumeirah |</p>\r\n<p> 10 minutes, Mall of the Emirates |</p>\r\n<p> 10 minutes, Burj Al Arab</p>",
+  "paymentPlanIntro": "80 % during construction 20 % on completion",
+  "paymentPlanDetails": "<p>20 % on booking |</p>\r\n<p>1st Installment 10 % |</p>\r\n<p>2nd Installment 10 %|</p>\r\n<p>3rd Installment  10 % |</p>\r\n<p>4th Installment 10 % |</p>\r\n<p>5th Installment  10 % |</p>\r\n<p>Sixth Installment 10 % |</p>\r\n<p>Final Installment 20 % |</p>",
+  "completionQuarter": "Q4",
+  "completionYear": "2026",
+  "permitNumber": "0552676528",
+  "googleMapLatLang": "25.07026547300746, 55.14671340029833",
+  "developerLogoUrl": "/assets/listings/sobha_logo.svg",
+  "floorPlanUrl": "/assets/listings/Floorplan-1.pdf",
+  "paymentPlanUrl": "/assets/listings/Paymentplan-Verde-min.jpg",
+  "videoUrl": "/assets/listings/Verde-By-Sobha.mp4",
+  "videoCoverUrl": "/assets/listings/C3-min-scaled.jpg",
+  "featuredImage": "/assets/listings/C3-min-scaled.jpg",
+  "galleryImages": [
+    "/assets/listings/Verde-by-Sobha.webp",
+    "/assets/listings/sobha_verde_jlt_3.webp",
+    "/assets/listings/sobha_verde_jlt_5.webp"
+  ]
+}

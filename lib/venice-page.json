@@ -1,0 +1,42 @@
+{
+  "slug": "damac-lagoons-venice",
+  "offPlanUnitId": 503,
+  "isFeatured": true,
+  "offPlanPropertiesTitle": "DAMAC Lagoons - Venice cluster",
+  "offplanDescription": "<p>Close to the charm of DAMAC Hills and yet hidden away from the bustle is DAMAC Lagoons – a new master community in Dubai, inspired by the Mediterranean. At DAMAC Lagoons, the most elegant villas and townhouses are surrounded by azure blue lagoons, white sandy beaches, tropical island vibes and other enchanting experiences, across 45 million square feet. </p>",
+  "developerName": "DAMAC properties",
+  "developerSummary": "<p>DAMAC Properties has been at the forefront of the Middle East’s luxury real estate market since 2002, delivering award-winning residential, commercial and leisure properties across the region, including the UAE, Saudi Arabia, Qatar, Jordan, Lebanon, Iraq, Maldives, Canada, the US, as well as the UK.</p>",
+  "propertyExplainer": "<p>Unique collection of luxurious homes called in DAMAC Lagoons called Venice will quickly take you to the Floating City of Venice.</p>\r\n<p>This contemporary neighbourhood will be surrounded by beautiful waterways that will revive any romantic memories of being in the actual city. The finest alternative for anyone looking to live lavishly in one of Dubai's most cutting-edge and extravagant communities is Venice DAMAC Lagoons</p>",
+  "propertyTypes": "<p>6 bedrooms Villa, From AED 6,197,000|</p>",
+  "propertyTypes2": [
+    "villa"
+  ],
+  "propertyHighlights2": [
+    "fitnessCentres",
+    "security",
+    "shopping",
+    "communityCenter",
+    "playGround",
+    "dining"
+  ],
+  "amenities": "<p>White Sandy beaches|</p>\r\n<p>Wave Pool|</p>\r\n<p>Fitness &amp; wellness zone|</p>\r\n<p>Floating cinema|</p>\r\n<p>Plant and star Observatory|</p>\r\n<p>Open-air music pavilion|</p>\r\n<p>Ladies Hub with gym, spa, beauty salon and meditation lounge |</p>\r\n<p>Sports facilities for football, vollyball, basketball etc.</p>",
+  "locationDescription": "<p>DAMAC Hills, Remraam, and Tilal Al Ghaf surround DAMAC Lagoons. Residents will be able to travel to any part of Dubai in a short amount of time thanks to the area's excellent road connections. Thus, Downtown Dubai, Business Bay, and Dubai Marina are all within 30 minutes of the community, while Deira and Dubai International Airport are a 40-minute drive away.</p>",
+  "locationList": "<p>30 minutes, Dubai Marina|</p>\r\n<p>30 minutes, Business bay|</p>\r\n<p>40 minutes, Dubai international airport| </p>\r\n<p>30 minutes, The Palm Jumeirah|</p>\r\n<p>25 minutes, The Mall of the Emirates|</p>\r\n<p>20 minutes, Dubai Miracle Garden</p>",
+  "paymentPlanIntro": "80 % during contruction 20 % on completion",
+  "paymentPlanDetails": "<p>Downpayment 20 %, On booking |</p>\r\n<p>1st Installment 5 %, Within 3 Months of Sale |</p>\r\n<p>2nd Installment 5 %, Within 6 Months of Sale |</p>\r\n<p>3rd Installment 5 %, Within 9 Months of Sale |</p>\r\n<p>4th Installment 5 %, Within 12 Months of Sale |</p>\r\n<p>5th Installment 10 %, On 40% project completion |</p>\r\n<p>6th Installment 10 %, On 50% project completion |</p>\r\n<p>7th Installment 10 %, On 60% project completion |</p>\r\n<p>8th Installment 10 %, On 70% project completion |</p>\r\n<p>Final Installment 20% , On Project Completion</p>",
+  "completionQuarter": "Q4",
+  "completionYear": "2024",
+  "permitNumber": "0411444656",
+  "googleMapLatLang": "25.0171361118687, 55.24284851534498",
+  "developerLogoUrl": "/assets/listings/damac-logo-dark.svg",
+  "floorPlanUrl": "/assets/listings/Venice-6-bedroom-floorplan.pdf",
+  "paymentPlanUrl": "/assets/listings/Venice-payment-plan.pdf",
+  "videoUrl": "/assets/listings/Venice-Malta-Launch-Video-English.mp4",
+  "videoCoverUrl": "/assets/listings/VRender_3_Glamour_Lifestyle.webp",
+  "featuredImage": "/assets/listings/Venice-6-bedroom-Villa.webp",
+  "galleryImages": [
+    "/assets/listings/VRender_1_Water_View.webp",
+    "/assets/listings/VRender_3_Glamour_Lifestyle.webp",
+    "/assets/listings/Venice-6-bedroom-Villa.webp"
+  ]
+}
