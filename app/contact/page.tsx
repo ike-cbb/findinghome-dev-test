@@ -23,7 +23,7 @@ export default function ContactPage() {
           </h1>
 
           <div>
-            <p className="text-[#010101] text-[16px] mb-[1.2em]">
+            <p className="text-[#010101] text-[16px] mb-[1.2em]" style={{ lineHeight: "27px", fontFamily: "Poppins, sans-serif" }}>
               <span className="block mb-5 text-[16px]">
                 Phone:{" "}
                 <a href="tel:+971 58 583 9259">+971 55 701 1419</a> | Email:{" "}

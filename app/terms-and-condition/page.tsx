@@ -75,7 +75,7 @@ export default function TermsAndConditionPage() {
     <article style={{ maxWidth: "620px", margin: "0 auto" }}>
       <div>
         <div style={{ paddingLeft: "5%", paddingRight: "5%", paddingBottom: "10%", paddingTop: "20%" }}>
-          <div style={{ maxWidth: "1200px" }}>
+          <div style={{ maxWidth: "1218px", boxSizing: "border-box", margin: "0px auto" }}>
             <h1 style={h1Style}>
               Terms of Use
             </h1>

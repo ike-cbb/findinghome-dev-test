@@ -33,7 +33,7 @@ export default function OffPlanPage() {
             <div style={{ flexBasis: "60%" }}>
               <p
                 className="text-[#ef4136] font-medium tracking-[0.02em]"
-                style={{ marginBottom: "5px", fontSize: "18px", fontFamily: "Poppins, sans-serif" }}
+                style={{ marginBottom: "5px", fontSize: "18px", lineHeight: "30.375px", fontFamily: "Poppins, sans-serif" }}
               >
                 Why Off-Plan
               </p>
@@ -45,7 +45,7 @@ export default function OffPlanPage() {
               </h1>
               <p
                 className="text-[#010101]"
-                style={{ fontSize: "2.4rem", lineHeight: "1.4", marginBottom: "1em", fontFamily: "Poppins, sans-serif" }}
+                style={{ fontSize: "24px", lineHeight: "33.6px", marginBottom: "1em", fontFamily: "Poppins, sans-serif" }}
               >
                 Dubai is known around the world for its exciting off-plan developments.
               </p>
@@ -66,7 +66,7 @@ export default function OffPlanPage() {
       {/* Featured Off-Plan & Investments */}
       <section className="px-[5%]" style={{ paddingTop: "60px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", paddingLeft: 0, paddingRight: 0 }}>
-          <h3 className="text-[#010101] font-medium" style={{ fontSize: "4rem", marginBottom: "40px", lineHeight: "52px" }}>
+          <h3 className="text-[#010101] font-medium" style={{ fontSize: "40px", marginBottom: "40px", lineHeight: "52px" }}>
             Featured Off-Plan &amp; Investments
           </h3>
 

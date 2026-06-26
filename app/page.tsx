@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <article>
+    <article className="homepage-content">
       <SplashAnimation />
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-[160px] sm:pt-[250px] pb-[60px] sm:pb-[250px] px-[5%]">

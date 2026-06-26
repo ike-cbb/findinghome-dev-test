@@ -276,11 +276,110 @@ textarea::placeholder {
   line-height: 25.6px !important;
 }
 
+.Header_bar__L8CDF {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
 /* =============================================================
    Button font-weight — match live site (400)
    ============================================================= */
 button {
   font-weight: 400 !important;
+  line-height: 18.4px !important;
+}
+
+/* =============================================================
+   Form elements — match live site
+   - input/textarea/select: 16px/400/18.4px (not 14px/300/22.4px)
+   - label: 16px/300/25.6px
+   Root cause: Tailwind v4 preflight sets line-height: 1.6 on all
+   elements, which makes form elements too tall.
+   ============================================================= */
+input, textarea, select {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 18.4px !important;
+}
+label {
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  line-height: 25.6px !important;
+}
+
+/* =============================================================
+   Card h4 (property cards, featured listings) — 30px line-height
+   Dev was using 38.4px (1.6 ratio from Tailwind preflight)
+   Live uses 30px (1.25 ratio)
+   Note: ONLY targets card/list h4s, not section heading h4s
+   ============================================================= */
+[class*="card"] h4,
+[class*="listing"] h4,
+[class*="property"] h4,
+.off-plan-card h4,
+.featured-off-plan h4 {
+  line-height: 30px !important;
+}
+
+/* =============================================================
+   Intro/label paragraphs (18px/500) — 30.375px line-height
+   Dev was using 27px (1.5 ratio)
+   Live uses 30.375px (1.6875 ratio)
+   These are section labels like "Who We Are", "Why Off-Plan",
+   "Contact Us" etc.
+   ============================================================= */
+.intro-label,
+.section-label,
+.tag,
+p.intro-text,
+[class*="section-label"],
+[class*="intro-label"] {
+  line-height: 30.375px !important;
+}
+
+/* =============================================================
+   About-us page — match live
+   - h3 "We Only Work with the best": 30px/400/39px (not 48/400/76.8)
+   - p quote "Finding Home. Next to choosing": 24px/300/40.5px (not 32/300/27)
+   - li nav: 14px/300/22.4px (not 22.4/300/25.6)
+   ============================================================= */
+body.about-us h3,
+body[class*="about"] h3,
+.about-us-page h3 {
+  font-size: 30px !important;
+  line-height: 39px !important;
+}
+body.about-us p {
+  font-size: 18px !important;
+  line-height: 30.375px !important;
+}
+body.about-us p.quote,
+body[class*="about"] p.quote,
+.about-us-page p.quote {
+  font-size: 24px !important;
+  line-height: 40.5px !important;
+}
+/* Nav li (header navigation) — 14px font, 22.4px line-height (match live) */
+header li,
+.Header_header__Z8PUO li,
+[class*="Header"] li {
+  font-size: 14px !important;
+  line-height: 22.4px !important;
+}
+
+/* About-us page — match live
+   - p "Who We Are" intro label: 18px/500/30.375px (not 27px)
+   - p "Finding Home..." quote: 24px/300/40.5px (not 27px) */
+body.about-us p,
+body[class*="about"] p,
+.about-us-page p {
+  line-height: 30.375px !important;
+}
+body.about-us p.quote,
+body[class*="about"] p.quote,
+.about-us-page p.quote {
+  font-size: 24px !important;
+  line-height: 40.5px !important;
 }
 
 /* =============================================================
@@ -295,12 +394,12 @@ button {
    ============================================================= */
 
 /* Homepage p line-height: 25.6px → 27px (match live) */
-article > section p {
+article.homepage-content > section p {
   line-height: 27px !important;
 }
 
 /* Homepage h5 line-height: 41.6px → 39px (match live) */
-article > section h5 {
+article.homepage-content > section h5 {
   line-height: 39px !important;
   letter-spacing: -0.5px !important;
 }
@@ -362,12 +461,13 @@ body.legal_page article {
   font-weight: 300 !important;
 }
 
-/* Legal pages: padded div breaks out of article using alignfull pattern (match live) */
+/* Legal pages: padded div breaks out of article using alignfull pattern (match live)
+   The +7.5px compensates for the scrollbar so the padded div aligns to viewport edge */
 article > div > div {
   width: 100vw !important;
   max-width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
+  margin-left: calc(50% - 50vw + 7.5px) !important;
+  margin-right: calc(50% - 50vw + 7.5px) !important;
   position: relative !important;
   box-sizing: border-box !important;
 }
@@ -601,7 +701,8 @@ section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a[href^="https://wa.me"
   border: 1px solid #000 !important;
   border-radius: 3px !important;
   background-color: #f7f7f7 !important;
-  font-size: 14px !important;
+  font-size: 10px !important;
+  line-height: 11.5px !important;
   outline: none;
   margin: 0 !important;
   font-family: "Roboto", Helvetica, Arial, sans-serif !important;

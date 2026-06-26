@@ -31,7 +31,7 @@ export default function AboutUsPage() {
             <div style={{ flexBasis: "55%" }}>
               <p
                 className="text-[#ef4136] font-medium tracking-[0.02em]"
-                style={{ marginBottom: "5px", fontSize: "18px" }}
+                style={{ marginBottom: "5px", fontSize: "18px", lineHeight: "30.375px" }}
               >
                 Who We Are
               </p>
@@ -41,13 +41,13 @@ export default function AboutUsPage() {
               >
                 Buying a home should be a life milestone
               </h1>
-              <p className="text-[#010101]" style={{ fontSize: "2rem", marginBottom: "1em" }}>
+              <p className="text-[#010101]" style={{ fontSize: "24px", lineHeight: "40.5px", marginBottom: "1em" }}>
                 Finding Home. Next to choosing our life partner, buying a home is the biggest decision we
                 will ever make. We understand. That&rsquo;s why we&rsquo;re dedicated to raising the
                 industry bar on how real estate is done, with an experience-led approach that that feeling
                 &ndash; without the hassle.
               </p>
-              <p className="text-[#010101]" style={{ fontSize: "18px", margin: 0 }}>
+              <p className="text-[#010101]" style={{ fontSize: "18px", lineHeight: "30.375px", margin: 0 }}>
                 Our team at Finding Home are passionate, energetic, and committed experts. They are part of
                 the fabric of the communities they serve, prioritizing local knowledge and expertise. Every
                 one of our agents is a specialist in their area, providing our clients with the high level of
@@ -71,7 +71,7 @@ export default function AboutUsPage() {
               className="absolute left-[-30px] bottom-0 bg-[#957f5c] hidden lg:block"
               style={{ width: "30px", height: "80%" }}
             />
-            <h3 className="text-[#957f5c] font-normal" style={{ fontSize: "3rem", marginBottom: "40px" }}>
+            <h3 className="text-[#957f5c] font-normal" style={{ fontSize: "30px", lineHeight: "39px", marginBottom: "40px" }}>
               We Only Work with the best
             </h3>
             <div className="flex flex-wrap items-center" style={{ gap: "2rem", marginBottom: "28px" }}>
@@ -152,17 +152,17 @@ export default function AboutUsPage() {
                 </p>
                 <p
                   className="text-[#010101]"
-                  style={{ fontSize: "2.4rem", lineHeight: "1.4", marginBottom: "1em" }}
+                  style={{ fontSize: "24px", lineHeight: "33.6px", marginBottom: "1em" }}
                 >
                   At Finding Home, we believe that the journey of finding a home to buy or rent should be
                   just as rewarding as the destination.
                 </p>
-                <p className="text-[#010101]" style={{ fontSize: "18px", marginBottom: "1em", lineHeight: "1.6" }}>
+                <p className="text-[#010101]" style={{ fontSize: "18px", marginBottom: "1em", lineHeight: "30.375px" }}>
                   Buying or renting a home is an important and highly personal journey for our clients. We
                   aim to prioritize the client&rsquo;s experience, making the entire process of finding a
                   home easier, more transparent, and less of a hassle.
                 </p>
-                <p style={{ fontSize: "18px", marginBottom: "1em", lineHeight: "1.6" }}>
+                <p style={{ fontSize: "18px", marginBottom: "1em", lineHeight: "30.375px" }}>
                   At Finding Home, we value local knowledge and expertise, and take a friendly and
                   supportive approach to deliver an exceptional (and enjoyable) homefinding experience.
                 </p>
@@ -178,11 +178,11 @@ export default function AboutUsPage() {
                 </p>
                 <p
                   className="text-[#010101]"
-                  style={{ fontSize: "2.4rem", lineHeight: "1.4", marginBottom: "1em" }}
+                  style={{ fontSize: "24px", lineHeight: "33.6px", marginBottom: "1em" }}
                 >
                   We make the experience of Buying, Selling or Renting as easy as possible.
                 </p>
-                <p style={{ fontSize: "18px", marginBottom: "1em", lineHeight: "1.6" }}>
+                <p style={{ fontSize: "18px", marginBottom: "1em", lineHeight: "30.375px" }}>
                   At Finding Home we&rsquo;re committed to raising the industry bar on how real estate is
                   done, with an approach that prioritizes finding homes rather than simply finding
                   properties. We provide a range of services for clients looking to buy, sell, or rent their
