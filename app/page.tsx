@@ -5,6 +5,7 @@ import Image from "next/image";
 import HomepageListings from "@/components/HomepageListings";
 import ContactForm from "@/components/ContactForm";
 import SplashAnimation from "@/components/SplashAnimation";
+import LetsTalkSection from "@/components/LetsTalkSection";
 
 export const metadata = {
   title: "Home - Finding Home",
@@ -192,39 +193,11 @@ export default function HomePage() {
       </section>
 
       {/* Let's Talk */}
-      <section className="w-full" style={{ padding: "100px 0 60px" }}>
-        <div className="flex flex-col lg:flex-row lg:items-stretch">
-          <div className="lg:basis-[60%]">
-            <figure className="m-0 h-full">
-              <Image
-                src="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/02/ftrd-lets-talk2-scaled.webp"
-                alt=""
-                width={2560}
-                height={2099}
-                className="w-full object-cover"
-                style={{ height: "1020px", maxHeight: "100%" }}
-              />
-            </figure>
-          </div>
-          <div className="lg:basis-[40%]">
-            <div className="relative bg-[#fde2e1]" style={{ padding: "50px 80px" }}>
-              {/* Red accent bar */}
-              <span
-                className="absolute left-[-30px] top-0 bg-[#ef4136] hidden lg:block"
-                style={{ width: "30px", height: "42%", zIndex: 1 }}
-              />
-              <ContactForm
-                variant="pink"
-                showCheckbox
-                showInterestedProperty
-                messagePlaceholder="How can we help you?"
-                formName="home-contact-form"
-                checkboxId="checkbox-i-agree-0"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <LetsTalkSection
+        imageSrc="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/02/ftrd-lets-talk2-scaled.webp"
+        formName="home-contact-form"
+        checkboxId="checkbox-i-agree-0"
+      />
 
       {/* Pre-footer Cards */}
       <section className="w-full" style={{ marginBottom: "-1px" }}>

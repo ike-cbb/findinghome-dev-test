@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import FaqSection from "@/components/FaqSection";
+import LetsTalkSection from "@/components/LetsTalkSection";
 
 export const metadata = {
   title: "About Us - Finding Home",
@@ -207,37 +209,14 @@ export default function AboutUsPage() {
       </section>
 
       {/* Let's Talk */}
-      <section className="w-full" style={{ padding: "60px 0 0" }}>
-        <div className="flex flex-col lg:flex-row lg:items-stretch">
-          <div className="lg:basis-[60%]">
-            <figure className="m-0 h-full">
-              <Image
-                src="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/02/ftrd-lets-talk2-scaled.webp"
-                alt=""
-                width={2560}
-                height={2099}
-                className="w-full object-cover"
-                style={{ height: "930px" }}
-              />
-            </figure>
-          </div>
-          <div className="lg:basis-[40%]">
-            <div className="relative bg-[#fde2e1]" style={{ padding: "50px 60px" }}>
-              <span
-                className="absolute left-[-30px] top-0 bg-[#ef4136] hidden lg:block"
-                style={{ width: "30px", height: "42%", zIndex: 1 }}
-              />
-              <ContactForm
-                variant="pink"
-                showCheckbox
-                showInterestedProperty
-                formName="about-contact-form"
-                checkboxId="checkbox-agree-about"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <LetsTalkSection
+        imageSrc="https://findinghomeprd.wpengine.com/wp-content/uploads/2023/02/ftrd-lets-talk2-scaled.webp"
+        formName="about-contact-form"
+        checkboxId="checkbox-agree-about"
+      />
+
+      {/* FAQ */}
+      <FaqSection />
     </article>
   );
 }
