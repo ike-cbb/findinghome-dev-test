@@ -146,9 +146,9 @@ export default async function PropertyDetailPage({
   return (
     <article className="off-plan-single">
       {/* Breadcrumbs */}
-      <div className="px-[5%]" style={{ paddingTop: "20px", paddingBottom: "20px" }}>
+      <div className="px-[31px]" style={{ paddingTop: "20px", paddingBottom: "20px" }}>
         <div className="max-w-[1200px] mx-auto">
-          <p className="m-0" style={{ fontSize: "14px" }}>
+          <p className="m-0" style={{ fontSize: "14px", lineHeight: "23.625px" }}>
             <Link href="/off-plan" className="text-[#010101] no-underline">
               Off-Plan{" "}
             </Link>
@@ -163,7 +163,7 @@ export default async function PropertyDetailPage({
       </div>
 
       {/* Hero */}
-      <section className="relative py-[12%] text-center overflow-hidden">
+      <section className="relative py-[124px] text-center overflow-hidden">
         <div className="absolute inset-0" style={{ margin: "0 5%" }}>
           <Image
             src={`/assets/listings/${property.heroImage}`}
@@ -177,7 +177,7 @@ export default async function PropertyDetailPage({
         </div>
         <div className="relative z-10">
           <h1
-            className="text-[#f1f1f1] mb-8"
+            className="text-[#f1f1f1] mb-10"
             style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400, lineHeight: "60px" }}
           >
             {property.title}
@@ -185,21 +185,21 @@ export default async function PropertyDetailPage({
           <div className="flex flex-wrap justify-center gap-[10px]">
             <a
               href="#gallery"
-              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
+              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] px-[30px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
               style={{ fontFamily: "'Poppins', sans-serif", width: "281px" }}
             >
               Gallery
             </a>
             <a
               href="#property-highlights"
-              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
+              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] px-[30px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
               style={{ fontFamily: "'Poppins', sans-serif", width: "281px" }}
             >
               Highlights
             </a>
             <a
               href="#floorplan"
-              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
+              className="inline-block rounded-[3px] bg-[#fde2e1] text-[#ef4136] text-[18px] py-[14px] px-[30px] font-medium no-underline hover:bg-[#f5d0cf] transition-all text-center"
               style={{ fontFamily: "'Poppins', sans-serif", width: "281px" }}
             >
               Floorplans
@@ -209,11 +209,11 @@ export default async function PropertyDetailPage({
       </section>
 
       {/* Intro + Video */}
-      <section className="px-[5%] py-[5%]">
+      <section className="px-[31px] py-[30px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex gap-5 mb-[60px]">
             <div className="flex-[1_1_66%]">
-              <p className="text-[#010101] leading-[1.4]" style={{ fontSize: "28px" }}>
+              <p className="text-[#000] leading-[1.4]" style={{ fontSize: "28px", marginBottom: "33.6px" }}>
                 {property.aboutDescription.replace(/<[^>]*>/g, "")}
               </p>
             </div>
@@ -241,12 +241,12 @@ export default async function PropertyDetailPage({
       </section>
 
       {/* Property Highlights */}
-      <section id="property-highlights" className="px-[5%] pb-[5%]">
+      <section id="property-highlights" className="px-[31px] pb-[50px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-wrap items-center" style={{ gap: "80px" }}>
             <p
               className="text-[#ef4136] m-0"
-              style={{ fontSize: "24px", fontStyle: "normal", fontWeight: 500, fontFamily: "'Poppins', sans-serif" }}
+              style={{ fontSize: "24px", fontStyle: "normal", fontWeight: 500, fontFamily: "'Poppins', sans-serif", lineHeight: "40.5px", marginBottom: "28.8px" }}
             >
               Property Highlights
             </p>
@@ -288,7 +288,7 @@ export default async function PropertyDetailPage({
                     </div>
                     <p
                       className="m-0"
-                      style={{ fontSize: "14px", color: "#010101", fontFamily: "'Poppins', sans-serif" }}
+                      style={{ fontSize: "14px", color: "#000", fontFamily: "'Poppins', sans-serif", lineHeight: "23.625px", marginBottom: "16.8px" }}
                     >
                       {label}
                     </p>
@@ -301,12 +301,12 @@ export default async function PropertyDetailPage({
       </section>
 
       {/* Property Types + Amenities */}
-      <section className="px-[5%] pb-[5%]">
+      <section className="px-[31px] pb-[50px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-wrap" style={{ gap: "80px" }}>
             <div className="flex-[1_1_300px]">
               <h3
-                className="m-0 mb-4"
+                className="m-0 mb-[30px]"
                 style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400, fontFamily: "'Poppins', sans-serif" }}
               >
                 Property Types
@@ -319,8 +319,8 @@ export default async function PropertyDetailPage({
                     const price = firstComma > -1 ? type.slice(firstComma + 1).trim() : "";
                     return (
                       <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "hsla(2,88%,94%,.2)" : "#fff", borderBottom: i < propertyTypesList.length - 1 ? "1px solid #fde2e1" : "none" }}>
-                        <td style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif", padding: "15px", fontWeight: 500 }}>{typeName}</td>
-                        <td style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif", padding: "15px", fontWeight: 500 }}>{price}</td>
+                        <td style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif", padding: "15px", fontWeight: 500, lineHeight: "27px" }}>{typeName}</td>
+                        <td style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif", padding: "15px", fontWeight: 500, lineHeight: "27px" }}>{price}</td>
                       </tr>
                     );
                   })}
@@ -328,7 +328,7 @@ export default async function PropertyDetailPage({
               </table>
               <p
                 className="text-[#010101] m-0"
-                style={{ fontSize: "18px", fontStyle: "normal", fontWeight: 500, fontFamily: "'Poppins', sans-serif" }}
+                style={{ fontSize: "18px", fontStyle: "normal", fontWeight: 500, fontFamily: "'Poppins', sans-serif", lineHeight: "30.375px" }}
               >
                 Completion Date: {property.completionQuarter} {property.completionYear}
               </p>
@@ -336,7 +336,7 @@ export default async function PropertyDetailPage({
             <div className="flex-[1_1_300px]">
               <p
                 className="text-[#ef4136] m-0 mb-4"
-                style={{ fontSize: "24px", fontStyle: "normal", fontWeight: 500, fontFamily: "'Poppins', sans-serif", marginTop: "20px" }}
+                style={{ fontSize: "24px", fontStyle: "normal", fontWeight: 500, fontFamily: "'Poppins', sans-serif", marginTop: "20px", lineHeight: "40.5px" }}
               >
                 Amenities
               </p>
@@ -344,7 +344,7 @@ export default async function PropertyDetailPage({
                 <tbody>
                   {amenitiesList.map((amenity, i) => (
                     <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "hsla(2,88%,94%,.2)" : "#fff", borderBottom: i < amenitiesList.length - 1 ? "1px solid #fde2e1" : "none" }}>
-                      <td style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif", padding: "15px", fontWeight: 500 }}>{amenity}</td>
+                      <td style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif", padding: "15px", fontWeight: 500, lineHeight: "27px" }}>{amenity}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -355,7 +355,7 @@ export default async function PropertyDetailPage({
       </section>
 
       {/* Location */}
-      <section className="px-[5%] pb-[5%]">
+      <section className="px-[31px] pb-[100px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-wrap" style={{ gap: "80px" }}>
             <div className="flex-[1_1_300px]">
@@ -380,13 +380,13 @@ export default async function PropertyDetailPage({
               {locationFirstSentence && (
                 <>
                   <h4
-                    className="text-[#ef4136] m-0 mb-4"
-                    style={{ fontSize: "24px", fontStyle: "normal", fontWeight: 500, fontFamily: "'Poppins', sans-serif" }}
+                    className="text-[#ef4136] m-0 mb-[25px]"
+                    style={{ fontSize: "24px", fontStyle: "normal", fontWeight: 500, fontFamily: "'Poppins', sans-serif", lineHeight: "30px" }}
                   >
                     {locationFirstSentence}
                   </h4>
                   {locationRestText && (
-                    <p className="mb-4" style={{ fontSize: "18px", fontFamily: "'Poppins', sans-serif" }}>{locationRestText}</p>
+                    <p className="mb-4" style={{ fontSize: "18px", fontFamily: "'Poppins', sans-serif", lineHeight: "30.375px" }}>{locationRestText}</p>
                   )}
 
                   {property.locationList && (
@@ -403,7 +403,7 @@ export default async function PropertyDetailPage({
                             const place = firstComma > -1 ? item.slice(firstComma + 1).trim() : "";
                             return (
                               <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "hsla(2,88%,94%,.2)" : "#fff", borderBottom: "1px solid #fde2e1" }}>
-                                <td style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif", padding: "15px", fontWeight: 500 }}>
+                                <td style={{ fontSize: "16px", fontFamily: "'Poppins', sans-serif", padding: "15px", fontWeight: 500, lineHeight: "27px" }}>
                                   {time} to {place}
                                 </td>
                               </tr>
@@ -420,7 +420,7 @@ export default async function PropertyDetailPage({
       </section>
 
       {/* Action Buttons */}
-      <section id="floorplan" className="px-[5%] pb-[5%]">
+      <section id="floorplan" className="px-[31px] pb-[50px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-wrap justify-center" style={{ gap: "15px" }}>
             <a
@@ -452,7 +452,7 @@ export default async function PropertyDetailPage({
 
       {/* Gallery */}
       {property.galleryImages.length > 0 && (
-        <section id="gallery" className="px-[5%] pb-[5%]">
+        <section id="gallery" className="px-[31px] pt-[80px] pb-[45px]">
           <div className="max-w-[1200px] mx-auto">
             <GallerySlider images={property.galleryImages} />
           </div>
@@ -460,7 +460,7 @@ export default async function PropertyDetailPage({
       )}
 
       {/* Developer Details */}
-      <section id="developer-details" className="px-[5%] pb-[5%]">
+      <section id="developer-details" className="px-[31px] pb-[80px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-wrap items-center" style={{ gap: "80px" }}>
             <div className="flex-[1_1_300px]">
@@ -491,12 +491,13 @@ export default async function PropertyDetailPage({
                     {paragraphs.map((p, i) => (
                       <p
                         key={i}
-                        className="text-[#010101] m-0"
+                        className="text-[#000] m-0"
                         style={{
                           fontSize: i === 0 ? "24px" : "18px",
-                          fontFamily: "'Poppins', sans-serif",
-                          lineHeight: 1.5,
-                          marginBottom: i < paragraphs.length - 1 ? "20px" : 0,
+                          fontFamily: i === 0 ? "'Poppins', sans-serif" : "'SourceSansPro', sans-serif",
+                          color: i === 0 ? "#000000" : "#000000",
+                          lineHeight: i === 0 ? "40.5px" : "30.375px",
+                          marginBottom: i === 0 ? "28.8px" : "21.6px",
                         }}
                       >
                         {p}
@@ -538,7 +539,7 @@ export default async function PropertyDetailPage({
       {/* Payment Plan */}
       <section
         id="payment-plan"
-        className="relative flex items-center px-[5%]"
+        className="relative flex items-center px-[31px] py-[31px] mb-[40px]"
         style={{ minHeight: "800px", fontFamily: "'Poppins', sans-serif" }}
       >
         {/* Full-height background image on the left 36% — matches WordPress .gb-container-image-wrap */}
@@ -573,12 +574,12 @@ export default async function PropertyDetailPage({
             {/* Table column */}
             <div className="flex-1 md:pl-[50px]" style={{ minWidth: 0 }}>
               <h2
-                className="m-0 mb-1"
+                className="m-0 mb-10"
                 style={{ fontSize: "40px", fontStyle: "normal", fontWeight: 400, lineHeight: "50px" }}
               >
                 Payment Plan
               </h2>
-              <p className="m-0 mb-4" style={{ fontSize: "24px" }}>
+              <p className="m-0 mb-[28.8px]" style={{ fontSize: "24px", lineHeight: "40.5px" }}>
                 80% During construction, 20% On completion
               </p>
               <table className="w-full" style={{ borderSpacing: 0, tableLayout: "fixed" }}>
@@ -628,6 +629,7 @@ export default async function PropertyDetailPage({
                             padding: "15px",
                             width: "50%",
                             fontSize: "16px",
+                            lineHeight: "27px",
                             textAlign: "center",
                             backgroundColor: isGreen
                               ? "rgba(142,238,156,.2)"
@@ -725,7 +727,7 @@ export default async function PropertyDetailPage({
                   })}
                 </tbody>
               </table>
-              <p className="text-[#767676] m-0 mt-5" style={{ fontStyle: "normal", fontWeight: 500 }}>
+              <p className="text-[#767676] m-0 mt-5" style={{ fontStyle: "normal", fontWeight: 500, lineHeight: "27px" }}>
                 Permit#: {property.permitNumber || "0705888731"}
               </p>
             </div>
@@ -734,9 +736,9 @@ export default async function PropertyDetailPage({
       </section>
 
       {/* Featured Off-Plan & Investments */}
-      <section className="px-[5%]" style={{ paddingTop: "60px", paddingBottom: "60px" }}>
+      <section className="px-[31px]" style={{ paddingTop: "80px", paddingBottom: "60px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <h3 className="text-[#010101] font-medium" style={{ fontSize: "4rem", marginBottom: "40px" }}>
+          <h3 className="text-[#010101] font-medium" style={{ fontSize: "40px", marginBottom: "40px" }}>
             Featured Off-Plan &amp; Investments
           </h3>
 
@@ -763,11 +765,11 @@ export default async function PropertyDetailPage({
                   >
                     <h4
                       className="text-[#010101] font-bold"
-                      style={{ fontSize: "24px", marginBottom: "5px" }}
+                      style={{ fontSize: "24px", marginBottom: "5px", lineHeight: "30px" }}
                     >
                       {p.title}
                     </h4>
-                    <p className="text-[#010101]" style={{ marginBottom: "10px" }}>
+                    <p className="text-[#010101]" style={{ marginBottom: "10px", lineHeight: "27px" }}>
                       {p.community}
                     </p>
                     <p className="text-[#010101]" style={{ marginBottom: "10px" }}>
@@ -784,20 +786,10 @@ export default async function PropertyDetailPage({
                       <Link
                         href={`/off-plan/${p.slug}`}
                         className="inline-flex items-center rounded-[3px] cursor-pointer no-underline"
-                        style={{ color: "#ef4136", backgroundColor: "#fefefe", padding: "3px 20px", fontSize: "18px", fontWeight: 400, height: "40px" }}
+                        style={{ color: "#ef4136", backgroundColor: "#fefefe", padding: "3px 20px", fontSize: "18px", fontWeight: 400, height: "40px", lineHeight: "28.8px" }}
                       >
                         View Detail
                       </Link>
-                      <a
-                        href={`mailto:info@findinghome.ae?subject=${encodeURIComponent(p.title)}`}
-                        className="inline-flex items-center justify-center rounded-[3px] flex-shrink-0"
-                        style={{ backgroundColor: "#fefefe", padding: "3px 20px", height: "40px" }}
-                      >
-                        <svg width="25" height="20" viewBox="0 0 25 20" fill="none">
-                          <rect x="1" y="1" width="23" height="18" rx="2" stroke="#ef4136" strokeWidth="1.5" />
-                          <path d="M1 4l11.5 8L24 4" stroke="#ef4136" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </a>
                       <a
                         href={`https://wa.me/+971585839259?text=${encodeURIComponent(p.title + " Enquiry")}`}
                         target="_blank"
@@ -819,7 +811,7 @@ export default async function PropertyDetailPage({
             <Link
               href="/off-plan/search"
               className="inline-block bg-[#ef4136] text-[#fefefe] font-medium rounded-[3px] py-4 text-center hover:bg-[#d63629] hover:rounded-[15px] transition-all"
-              style={{ fontSize: "18px", paddingLeft: "40px", paddingRight: "40px" }}
+              style={{ fontSize: "18px", paddingLeft: "40px", paddingRight: "40px", lineHeight: "28.8px" }}
             >
               See all Off-Plan Projects
             </Link>

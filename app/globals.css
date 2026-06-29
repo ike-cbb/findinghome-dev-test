@@ -782,6 +782,26 @@ section.pb-16.lg\:pb-24.px-5 .list-col .col-txt .bt-view a[href^="https://wa.me"
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Off-plan single page: match live line-heights for body/paragraph text
+   (breadcrumbs, highlight items, 80% payment summary, property type cells,
+   payment plan cells, permit# row, etc. — defaults from preflight are 22.4px
+   / 25.6px which render too tight vs live's 23.625px / 27px).
+
+   Note: only the 14px text uses 23.625px; other p tags (24/28/18px) set
+   their own line-height inline. So scope the 23.625px rule to p tags that
+   are explicitly 14px. */
+.off-plan-single p[style*="font-size: 14px"],
+.off-plan-single p[style*="font-size:14px"],
+.off-plan-single .single_offplan_container p[style*="font-size: 14px"] {
+  line-height: 23.625px !important;
+}
+.off-plan-single td {
+  line-height: 27px !important;
+}
+.off-plan-single h4 {
+  line-height: 30px !important;
+}
+
 /* Splash loading animation — home page only */
 .logo_onload {
   position: fixed !important;
