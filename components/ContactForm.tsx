@@ -4,6 +4,8 @@ interface ContactFormProps {
   variant?: "pink" | "transparent";
   showCheckbox?: boolean;
   showMessage?: boolean;
+  showInterestedProperty?: boolean;
+  messagePlaceholder?: string;
   selectOptions?: string[];
   buttonText?: string;
   selectDefault?: string;
@@ -25,6 +27,8 @@ export default function ContactForm({
   variant = "transparent",
   showCheckbox = false,
   showMessage = true,
+  showInterestedProperty = false,
+  messagePlaceholder = "Message",
   selectOptions = ["List my Home", "Off-Plan Enquiry", "Other"],
   buttonText = "Send Message",
   selectDefault,
@@ -133,9 +137,22 @@ export default function ContactForm({
             </option>
           ))}
         </select>
+        {showInterestedProperty && (
+          <input
+            type="text"
+            placeholder="Interested property (Name or Listing number)"
+            required
+            className={
+              variant === "pink"
+                ? "w-full outline-none block"
+                : "w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:border-primary"
+            }
+            style={variant === "pink" ? inputStyle : undefined}
+          />
+        )}
         {showMessage && (
           <textarea
-            placeholder="Message"
+            placeholder={messagePlaceholder}
             rows={4}
             className={
               variant === "pink"

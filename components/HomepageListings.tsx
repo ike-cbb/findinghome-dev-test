@@ -53,13 +53,13 @@ export default function HomepageListings() {
   }, [open]);
 
   return (
-    <section className="py-24 lg:py-32 px-5">
+    <section className="py-24 lg:py-24 px-5">
       <div className="max-w-[1200px] mx-auto">
         <div className="h-10" />
 
         {/* "Finding a new home in [dropdown]" */}
         <h3
-          className="text-[#010101] font-medium mb-10 flex items-baseline flex-wrap"
+          className="text-[#010101] font-medium mb-5 flex items-baseline flex-wrap"
           style={{
             fontSize: "30px",
             lineHeight: "39px",

@@ -35,7 +35,7 @@ export default function HomePage() {
           <div className="flex justify-center">
             <Link
               href="/off-plan/search"
-              className="inline-block w-3/4 !bg-[#ef4136] !text-[#fefefe] text-[16px] leading-[normal] font-medium rounded-[20px] pt-[14px] pb-[14px] px-[30px] text-center hover:!bg-[#d63629] hover:rounded-[15px] transition-all"
+              className="inline-block w-3/4 !bg-[#ef4136] !text-[#fefefe] text-[18px] leading-[normal] font-medium rounded-[20px] pt-[14px] pb-[14px] px-[30px] text-center hover:!bg-[#d63629] hover:rounded-[15px] transition-all"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
               Find Future Home
@@ -48,7 +48,7 @@ export default function HomePage() {
       <HomepageListings />
 
       {/* Who We Are */}
-      <section className="w-full px-[5%]" style={{ paddingTop: "100px", paddingBottom: "100px" }}>
+      <section className="w-full px-[5%]" style={{ paddingTop: "10px", paddingBottom: "100px" }}>
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row" style={{ gap: "2rem" }}>
             <div className="lg:basis-[45%] lg:self-end relative z-[1]">
@@ -216,6 +216,8 @@ export default function HomePage() {
               <ContactForm
                 variant="pink"
                 showCheckbox
+                showInterestedProperty
+                messagePlaceholder="How can we help you?"
                 formName="home-contact-form"
                 checkboxId="checkbox-i-agree-0"
               />
