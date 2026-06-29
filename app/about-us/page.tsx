@@ -230,6 +230,7 @@ export default function AboutUsPage() {
               <ContactForm
                 variant="pink"
                 showCheckbox
+                showInterestedProperty
                 formName="about-contact-form"
                 checkboxId="checkbox-agree-about"
               />

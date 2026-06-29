@@ -354,6 +354,7 @@ export default function OffPlanPage() {
               <ContactForm
                 variant="pink"
                 showCheckbox
+                showInterestedProperty
                 formName="offplan-contact-form"
                 checkboxId="checkbox-agree-offplan"
               />
